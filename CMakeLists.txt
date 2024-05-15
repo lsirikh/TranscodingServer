@@ -14,6 +14,7 @@ pkg_check_modules(GSTREAMER_RTSP_SERVER REQUIRED gstreamer-rtsp-server-1.0>=1.4)
 
 # 스레드 라이브러리 찾기
 find_package(Threads REQUIRED)
+message(STATUS "Threads library: ${CMAKE_THREAD_LIBS_INIT}")
 
 # 헤더 파일 포함 디렉토리 설정
 include_directories(${GSTREAMER_INCLUDE_DIRS})
@@ -28,4 +29,4 @@ link_directories(${GSTREAMER_RTSP_SERVER_LIBRARY_DIRS})
 add_executable(RTSPTranscodingServer main.cpp TranscodingService.cpp UriParts.cpp datetime.cpp)
 
 # 링크 설정
-target_link_libraries(RTSPTranscodingServer ${GSTREAMER_LIBRARIES} ${GSTREAMER_RTSP_SERVER_LIBRARIES} gstreamer-1.0 gstrtsp-1.0 ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(RTSPTranscodingServer ${GSTREAMER_LIBRARIES} ${GSTREAMER_RTSP_SERVER_LIBRARIES} gstreamer-1.0 gstrtsp-1.0 Threads::Threads)
