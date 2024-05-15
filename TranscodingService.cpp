@@ -23,9 +23,8 @@ void TranscodingService::Initialize() {
 }
 
 void TranscodingService::StartServer() {
-    gst_println("RTSPServer StartServer");
+    g_print("RTSPServer StartServer\n");
     if (!serverThread.joinable()) {
-        // Server Thread Run
         serverThread = std::thread([this]() { g_main_loop_run(mainLoop); });
     }
 }
@@ -206,7 +205,7 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
 
 void TranscodingService::AddClientInfo(GstRTSPClient* client, const std::string& uri) {
     std::lock_guard<std::recursive_mutex> lock(processMutex);
-    clientInfos.push_back(std::make_shared<ClientInfo>(client, uri));
+    clientInfos.push_back(std::shared_ptr<ClientInfo>(new ClientInfo(client, uri)));
     g_print("Current number of clients: %ld\n", clientInfos.size());
 }
 
@@ -228,7 +227,6 @@ void TranscodingService::RemoveClientWithClient(GstRTSPClient* client) {
                 gst_rtsp_client_close(client); 
                 it = clientInfos.erase(it); 
                 std::cout << "Client removed." << std::endl;
-                //gst_object_unref(client);
             }
             else {
                 ++it; 
@@ -261,7 +259,6 @@ void TranscodingService::RemoveClientWithId(const std::string& id) {
                 if(ret == 0)
                     g_print("Client was disconnected : %s\n", "OK");
                 
-                //gst_object_unref((*it)->client);
                 it = clientInfos.erase(it); 
             }
             else {
@@ -274,5 +271,4 @@ void TranscodingService::RemoveClientWithId(const std::string& id) {
     {
         g_print("Exception in removeClient: %s\n", e.what());
     }
-
 }

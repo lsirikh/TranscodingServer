@@ -11,7 +11,7 @@ void onClientClosed(GstRTSPClient* client, gpointer user_data);
 void unrefGstClient(GstRTSPClient* client);
 
 
-std::unique_ptr<TranscodingService> service;  // (수정) 자동 정리를 위해 unique_ptr 사용
+std::shared_ptr<TranscodingService> service;  // (수정) 자동 정리를 위해 unique_ptr 사용
 std::recursive_mutex  processMutex;  // 클라이언트 목록에 대한 뮤텍스
 
 
@@ -119,8 +119,7 @@ int main() {
     std::thread apiServerThread(startApiServer);
     apiServerThread.detach();
 
-
-    service = std::make_unique<TranscodingService>();  // (수정) unique_ptr로 객체 생성
+    service = std::make_shared<TranscodingService>();
     service->Initialize();
     service->StartServer();
 

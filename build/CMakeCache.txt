@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/usr/include
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -239,6 +245,9 @@ RTSPTranscodingServer_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 RTSPTranscodingServer_SOURCE_DIR:STATIC=/home/lsirikh/RTSPTranscodingServer
 
+//The directory containing a CMake configuration file for boost_headers.
+boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0
+
 //Path to a library.
 pkgcfg_lib_GSTREAMER_RTSP_SERVER_glib-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libglib-2.0.so
 
@@ -261,6 +270,18 @@ pkgcfg_lib_GSTREAMER_gobject-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgobject-2
 pkgcfg_lib_GSTREAMER_gstreamer-1.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so
 
 //Path to a library.
+pkgcfg_lib_GST_RTSP_SERVER_glib-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libglib-2.0.so
+
+//Path to a library.
+pkgcfg_lib_GST_RTSP_SERVER_gobject-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgobject-2.0.so
+
+//Path to a library.
+pkgcfg_lib_GST_RTSP_SERVER_gstreamer-1.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so
+
+//Path to a library.
+pkgcfg_lib_GST_RTSP_SERVER_gstrtspserver-1.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgstrtspserver-1.0.so
+
+//Path to a library.
 pkgcfg_lib_GST_glib-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libglib-2.0.so
 
 //Path to a library.
@@ -277,6 +298,8 @@ pkgcfg_lib_GST_gstrtspserver-1.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgstrtspse
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -420,6 +443,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Boost
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake][c ][v1.74.0()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.2()]
 GSTREAMER_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
@@ -492,42 +517,77 @@ GSTREAMER_gstreamer-1.0_INCLUDEDIR:INTERNAL=
 GSTREAMER_gstreamer-1.0_LIBDIR:INTERNAL=
 GSTREAMER_gstreamer-1.0_PREFIX:INTERNAL=
 GSTREAMER_gstreamer-1.0_VERSION:INTERNAL=
-GST_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/orc-0.4;-I/usr/include/gstreamer-1.0;-I/usr/include/gio-unix-2.0;-I/usr/include/libmount;-I/usr/include/blkid;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 GST_CFLAGS_I:INTERNAL=
 GST_CFLAGS_OTHER:INTERNAL=-pthread
 GST_FOUND:INTERNAL=1
-GST_INCLUDEDIR:INTERNAL=
-GST_INCLUDE_DIRS:INTERNAL=/usr/include/gstreamer-1.0;/usr/include/orc-0.4;/usr/include/gstreamer-1.0;/usr/include/gio-unix-2.0;/usr/include/libmount;/usr/include/blkid;/usr/include/gstreamer-1.0;/usr/include/x86_64-linux-gnu;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
-GST_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lgstrtspserver-1.0;-lgstreamer-1.0;-lgobject-2.0;-lglib-2.0
+GST_INCLUDEDIR:INTERNAL=/usr/include
+GST_INCLUDE_DIRS:INTERNAL=/usr/include/gstreamer-1.0;/usr/include/x86_64-linux-gnu;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lgstreamer-1.0;-lgobject-2.0;-lglib-2.0
 GST_LDFLAGS_OTHER:INTERNAL=
-GST_LIBDIR:INTERNAL=
-GST_LIBRARIES:INTERNAL=gstrtspserver-1.0;gstreamer-1.0;gobject-2.0;glib-2.0
+GST_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+GST_LIBRARIES:INTERNAL=gstreamer-1.0;gobject-2.0;glib-2.0
 GST_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 GST_LIBS:INTERNAL=
 GST_LIBS_L:INTERNAL=
 GST_LIBS_OTHER:INTERNAL=
 GST_LIBS_PATHS:INTERNAL=
-GST_MODULE_NAME:INTERNAL=
-GST_PREFIX:INTERNAL=
-GST_STATIC_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/orc-0.4;-I/usr/include/gstreamer-1.0;-I/usr/include/gio-unix-2.0;-I/usr/include/libmount;-I/usr/include/blkid;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_MODULE_NAME:INTERNAL=gstreamer-1.0
+GST_PREFIX:INTERNAL=/usr
+GST_RTSP_SERVER_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/orc-0.4;-I/usr/include/gstreamer-1.0;-I/usr/include/gio-unix-2.0;-I/usr/include/libmount;-I/usr/include/blkid;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_RTSP_SERVER_CFLAGS_I:INTERNAL=
+GST_RTSP_SERVER_CFLAGS_OTHER:INTERNAL=-pthread
+GST_RTSP_SERVER_FOUND:INTERNAL=1
+GST_RTSP_SERVER_INCLUDEDIR:INTERNAL=/usr/include
+GST_RTSP_SERVER_INCLUDE_DIRS:INTERNAL=/usr/include/gstreamer-1.0;/usr/include/orc-0.4;/usr/include/gstreamer-1.0;/usr/include/gio-unix-2.0;/usr/include/libmount;/usr/include/blkid;/usr/include/gstreamer-1.0;/usr/include/x86_64-linux-gnu;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_RTSP_SERVER_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lgstrtspserver-1.0;-lgstreamer-1.0;-lgobject-2.0;-lglib-2.0
+GST_RTSP_SERVER_LDFLAGS_OTHER:INTERNAL=
+GST_RTSP_SERVER_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+GST_RTSP_SERVER_LIBRARIES:INTERNAL=gstrtspserver-1.0;gstreamer-1.0;gobject-2.0;glib-2.0
+GST_RTSP_SERVER_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+GST_RTSP_SERVER_LIBS:INTERNAL=
+GST_RTSP_SERVER_LIBS_L:INTERNAL=
+GST_RTSP_SERVER_LIBS_OTHER:INTERNAL=
+GST_RTSP_SERVER_LIBS_PATHS:INTERNAL=
+GST_RTSP_SERVER_MODULE_NAME:INTERNAL=gstreamer-rtsp-server-1.0
+GST_RTSP_SERVER_PREFIX:INTERNAL=/usr
+GST_RTSP_SERVER_STATIC_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/orc-0.4;-I/usr/include/gstreamer-1.0;-I/usr/include/gio-unix-2.0;-I/usr/include/libmount;-I/usr/include/blkid;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_RTSP_SERVER_STATIC_CFLAGS_I:INTERNAL=
+GST_RTSP_SERVER_STATIC_CFLAGS_OTHER:INTERNAL=-pthread
+GST_RTSP_SERVER_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gstreamer-1.0;/usr/include/orc-0.4;/usr/include/gstreamer-1.0;/usr/include/gio-unix-2.0;/usr/include/libmount;/usr/include/blkid;/usr/include/gstreamer-1.0;/usr/include/x86_64-linux-gnu;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_RTSP_SERVER_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-L/usr/lib;-L/usr/lib/x86_64-linux-gnu;-lgstrtspserver-1.0;-lgstrtsp-1.0;-lm;-lgstsdp-1.0;-lm;-lgstrtp-1.0;-lm;-lgstpbutils-1.0;-lm;-lgstaudio-1.0;-lm;-lgsttag-1.0;-lm;-lgstvideo-1.0;-lm;-lorc-0.4;-lm;-pthread;-lgstnet-1.0;-lgio-2.0;-lmount;-ldl;-lblkid;-lselinux;-lsepol;-lpcre2-8;-lgstapp-1.0;-lgstbase-1.0;-lgstreamer-1.0;-lm;-ldl;-Wl,--export-dynamic;-lgmodule-2.0;-pthread;-lunwind;-llzma;-ldw;-lbz2;-llzma;-pthread;-lpthread;-lelf;-lz;-lgobject-2.0;-lffi;-lglib-2.0;-pthread;-lm;-lpcre
+GST_RTSP_SERVER_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-Wl,--export-dynamic;-pthread
+GST_RTSP_SERVER_STATIC_LIBDIR:INTERNAL=
+GST_RTSP_SERVER_STATIC_LIBRARIES:INTERNAL=gstrtspserver-1.0;gstrtsp-1.0;m;gstsdp-1.0;m;gstrtp-1.0;m;gstpbutils-1.0;m;gstaudio-1.0;m;gsttag-1.0;m;gstvideo-1.0;m;orc-0.4;m;gstnet-1.0;gio-2.0;mount;dl;blkid;selinux;sepol;pcre2-8;gstapp-1.0;gstbase-1.0;gstreamer-1.0;m;dl;gmodule-2.0;unwind;lzma;dw;bz2;lzma;pthread;elf;z;gobject-2.0;ffi;glib-2.0;m;pcre
+GST_RTSP_SERVER_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu;/usr/lib;/usr/lib/x86_64-linux-gnu
+GST_RTSP_SERVER_STATIC_LIBS:INTERNAL=
+GST_RTSP_SERVER_STATIC_LIBS_L:INTERNAL=
+GST_RTSP_SERVER_STATIC_LIBS_OTHER:INTERNAL=
+GST_RTSP_SERVER_STATIC_LIBS_PATHS:INTERNAL=
+GST_RTSP_SERVER_VERSION:INTERNAL=1.20.1
+GST_RTSP_SERVER_gstreamer-rtsp-server-1.0_INCLUDEDIR:INTERNAL=
+GST_RTSP_SERVER_gstreamer-rtsp-server-1.0_LIBDIR:INTERNAL=
+GST_RTSP_SERVER_gstreamer-rtsp-server-1.0_PREFIX:INTERNAL=
+GST_RTSP_SERVER_gstreamer-rtsp-server-1.0_VERSION:INTERNAL=
+GST_STATIC_CFLAGS:INTERNAL=-pthread;-I/usr/include/gstreamer-1.0;-I/usr/include/x86_64-linux-gnu;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 GST_STATIC_CFLAGS_I:INTERNAL=
 GST_STATIC_CFLAGS_OTHER:INTERNAL=-pthread
-GST_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gstreamer-1.0;/usr/include/orc-0.4;/usr/include/gstreamer-1.0;/usr/include/gio-unix-2.0;/usr/include/libmount;/usr/include/blkid;/usr/include/gstreamer-1.0;/usr/include/x86_64-linux-gnu;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
-GST_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-L/usr/lib;-L/usr/lib/x86_64-linux-gnu;-lgstrtspserver-1.0;-lgstrtsp-1.0;-lm;-lgstsdp-1.0;-lm;-lgstrtp-1.0;-lm;-lgstpbutils-1.0;-lm;-lgstaudio-1.0;-lm;-lgsttag-1.0;-lm;-lgstvideo-1.0;-lm;-lorc-0.4;-lm;-pthread;-lgstnet-1.0;-lgio-2.0;-lmount;-ldl;-lblkid;-lselinux;-lsepol;-lpcre2-8;-lgstapp-1.0;-lgstbase-1.0;-lgstreamer-1.0;-lm;-ldl;-Wl,--export-dynamic;-lgmodule-2.0;-pthread;-lunwind;-llzma;-ldw;-lbz2;-llzma;-pthread;-lpthread;-lelf;-lz;-lgobject-2.0;-lffi;-lglib-2.0;-pthread;-lm;-lpcre
-GST_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-Wl,--export-dynamic;-pthread
+GST_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gstreamer-1.0;/usr/include/x86_64-linux-gnu;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GST_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lgstreamer-1.0;-lm;-ldl;-Wl,--export-dynamic;-lgmodule-2.0;-pthread;-lunwind;-llzma;-ldw;-lbz2;-llzma;-pthread;-lpthread;-lelf;-lz;-lgobject-2.0;-lffi;-lglib-2.0;-pthread;-lm;-lpcre
+GST_STATIC_LDFLAGS_OTHER:INTERNAL=-Wl,--export-dynamic;-pthread
 GST_STATIC_LIBDIR:INTERNAL=
-GST_STATIC_LIBRARIES:INTERNAL=gstrtspserver-1.0;gstrtsp-1.0;m;gstsdp-1.0;m;gstrtp-1.0;m;gstpbutils-1.0;m;gstaudio-1.0;m;gsttag-1.0;m;gstvideo-1.0;m;orc-0.4;m;gstnet-1.0;gio-2.0;mount;dl;blkid;selinux;sepol;pcre2-8;gstapp-1.0;gstbase-1.0;gstreamer-1.0;m;dl;gmodule-2.0;unwind;lzma;dw;bz2;lzma;pthread;elf;z;gobject-2.0;ffi;glib-2.0;m;pcre
-GST_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu;/usr/lib;/usr/lib/x86_64-linux-gnu
+GST_STATIC_LIBRARIES:INTERNAL=gstreamer-1.0;m;dl;gmodule-2.0;unwind;lzma;dw;bz2;lzma;pthread;elf;z;gobject-2.0;ffi;glib-2.0;m;pcre
+GST_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 GST_STATIC_LIBS:INTERNAL=
 GST_STATIC_LIBS_L:INTERNAL=
 GST_STATIC_LIBS_OTHER:INTERNAL=
 GST_STATIC_LIBS_PATHS:INTERNAL=
-GST_VERSION:INTERNAL=
-GST_gstreamer-1.0_INCLUDEDIR:INTERNAL=/usr/include
-GST_gstreamer-1.0_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+GST_VERSION:INTERNAL=1.20.3
+GST_gstreamer-1.0_INCLUDEDIR:INTERNAL=
+GST_gstreamer-1.0_LIBDIR:INTERNAL=
 GST_gstreamer-1.0_MODULE_NAME:INTERNAL=gstreamer-1.0
-GST_gstreamer-1.0_PREFIX:INTERNAL=/usr
-GST_gstreamer-1.0_VERSION:INTERNAL=1.20.3
+GST_gstreamer-1.0_PREFIX:INTERNAL=
+GST_gstreamer-1.0_VERSION:INTERNAL=
 GST_gstreamer-rtsp-server-1.0_INCLUDEDIR:INTERNAL=/usr/include
 GST_gstreamer-rtsp-server-1.0_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 GST_gstreamer-rtsp-server-1.0_MODULE_NAME:INTERNAL=gstreamer-rtsp-server-1.0
@@ -537,12 +597,16 @@ GST_gstreamer-rtsp-server-1.0_VERSION:INTERNAL=1.20.1
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-__pkg_config_arguments_GST:INTERNAL=REQUIRED;gstreamer-1.0;gstreamer-rtsp-server-1.0
+__pkg_config_arguments_GST:INTERNAL=REQUIRED;gstreamer-1.0>=1.4
 __pkg_config_arguments_GSTREAMER:INTERNAL=REQUIRED;gstreamer-1.0>=1.4
 __pkg_config_arguments_GSTREAMER_RTSP_SERVER:INTERNAL=REQUIRED;gstreamer-rtsp-server-1.0>=1.4
+__pkg_config_arguments_GST_RTSP_SERVER:INTERNAL=REQUIRED;gstreamer-rtsp-server-1.0>=1.4
 __pkg_config_checked_GST:INTERNAL=1
 __pkg_config_checked_GSTREAMER:INTERNAL=1
 __pkg_config_checked_GSTREAMER_RTSP_SERVER:INTERNAL=1
+__pkg_config_checked_GST_RTSP_SERVER:INTERNAL=1
+//ADVANCED property for variable: boost_headers_DIR
+boost_headers_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GSTREAMER_RTSP_SERVER_glib-2.0
 pkgcfg_lib_GSTREAMER_RTSP_SERVER_glib-2.0-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GSTREAMER_RTSP_SERVER_gobject-2.0
@@ -557,6 +621,14 @@ pkgcfg_lib_GSTREAMER_glib-2.0-ADVANCED:INTERNAL=1
 pkgcfg_lib_GSTREAMER_gobject-2.0-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GSTREAMER_gstreamer-1.0
 pkgcfg_lib_GSTREAMER_gstreamer-1.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GST_RTSP_SERVER_glib-2.0
+pkgcfg_lib_GST_RTSP_SERVER_glib-2.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GST_RTSP_SERVER_gobject-2.0
+pkgcfg_lib_GST_RTSP_SERVER_gobject-2.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GST_RTSP_SERVER_gstreamer-1.0
+pkgcfg_lib_GST_RTSP_SERVER_gstreamer-1.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GST_RTSP_SERVER_gstrtspserver-1.0
+pkgcfg_lib_GST_RTSP_SERVER_gstrtspserver-1.0-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GST_glib-2.0
 pkgcfg_lib_GST_glib-2.0-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GST_gobject-2.0

@@ -10,19 +10,17 @@
 #include <list>
 #include <mutex>
 #include <memory>
-#include <unordered_map>  // 추가
-
-
+#include <unordered_map>
 
 struct ClientInfo {
     GstRTSPClient* client;
     std::string uri;
-    
+
     ClientInfo(GstRTSPClient* c, const std::string& u) : client(c), uri(u) {
-        gst_object_ref(client);  
+        gst_object_ref(client);
     }
     ~ClientInfo() {
-        gst_object_unref(client); 
+        gst_object_unref(client);
     }
 };
 
@@ -31,7 +29,6 @@ public:
     TranscodingService();
     ~TranscodingService();
 
-    
     void Initialize();
     void StartServer();
     void StopServer();

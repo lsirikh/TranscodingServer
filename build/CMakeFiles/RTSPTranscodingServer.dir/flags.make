@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/gio-unix-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/home/lsirikh/RTSPTranscodingServer/headers
 
-CXX_FLAGS = -std=gnu++14
+CXX_FLAGS = -std=gnu++11
 
