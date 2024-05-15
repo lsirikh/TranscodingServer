@@ -1,0 +1,3 @@
+/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles/RTSPTranscodingServer.dir
+/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles/edit_cache.dir
+/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles/rebuild_cache.dir
