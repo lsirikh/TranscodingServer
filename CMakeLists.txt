@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(RTSPTranscodingServer VERSION 1.0)
 
 # C++ 표준 설정
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # GStreamer 패키지 찾기
@@ -25,4 +25,4 @@ link_directories(${GSTREAMER_RTSP_SERVER_LIBRARY_DIRS})
 add_executable(RTSPTranscodingServer main.cpp TranscodingService.cpp UriParts.cpp datetime.cpp)
 
 # 링크 설정
-target_link_libraries(RTSPTranscodingServer ${GSTREAMER_LIBRARIES} ${GSTREAMER_RTSP_SERVER_LIBRARIES})
+target_link_libraries(RTSPTranscodingServer ${GSTREAMER_LIBRARIES} ${GSTREAMER_RTSP_SERVER_LIBRARIES} gstreamer-1.0 gstrtsp-1.0 pthread)
