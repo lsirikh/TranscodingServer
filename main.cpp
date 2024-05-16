@@ -127,45 +127,50 @@ int main() {
     //// Server connects event for "client-connected"
     g_signal_connect(service->Server, "client-connected", G_CALLBACK(onClientConnected), service->Server);
 
+    // while (true) {
+    //     std::cout << "Enter Menu to add, delete or quit: ";
+    //     std::string input;
+    //     std::getline(std::cin, input);
+
+    //     if (input == "q") {
+    //         std::cout << "Quitting..." << std::endl;
+    //         break;
+    //     }
+    //     else if(input == "a") {
+    //         try {
+    //             std::cout << "Input Rtsp Url: ";
+    //             std::string input;
+    //             std::getline(std::cin, input);
+
+    //             bool ret = service->AddRtsp(input);
+    //             std::cout << "RTSP URL added: " << ret << std::endl;
+    //         }
+    //         catch (const std::exception& ex) {
+    //             std::cerr << "Error adding RTSP URL: " << ex.what() << std::endl;
+    //         }
+    //     }
+    //     else if (input == "d") {
+    //         try {
+    //             std::cout << "Remove Id: ";
+    //             std::string input;
+    //             std::getline(std::cin, input);
+
+    //             bool ret = service->RemoveRtsp(input);
+    //             std::cout << "RTSP URL removed: " << ret << std::endl;
+    //         }
+    //         catch (const std::exception& ex) {
+    //             std::cerr << "Error removing RTSP URL: " << ex.what() << std::endl;
+    //         }
+    //     }
+    //     else 
+    //     {
+    //         std::cout << "Input value was not valid." << std::endl;
+    //     }
+    // }
+
+    // 무한 루프 대신 서버 실행 상태 유지
     while (true) {
-        std::cout << "Enter Menu to add, delete or quit: ";
-        std::string input;
-        std::getline(std::cin, input);
-
-        if (input == "q") {
-            std::cout << "Quitting..." << std::endl;
-            break;
-        }
-        else if(input == "a") {
-            try {
-                std::cout << "Input Rtsp Url: ";
-                std::string input;
-                std::getline(std::cin, input);
-
-                bool ret = service->AddRtsp(input);
-                std::cout << "RTSP URL added: " << ret << std::endl;
-            }
-            catch (const std::exception& ex) {
-                std::cerr << "Error adding RTSP URL: " << ex.what() << std::endl;
-            }
-        }
-        else if (input == "d") {
-            try {
-                std::cout << "Remove Id: ";
-                std::string input;
-                std::getline(std::cin, input);
-
-                bool ret = service->RemoveRtsp(input);
-                std::cout << "RTSP URL removed: " << ret << std::endl;
-            }
-            catch (const std::exception& ex) {
-                std::cerr << "Error removing RTSP URL: " << ex.what() << std::endl;
-            }
-        }
-        else 
-        {
-            std::cout << "Input value was not valid." << std::endl;
-        }
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
     service->StopServer();
