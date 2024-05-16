@@ -17,7 +17,17 @@ TranscodingService::~TranscodingService() {
 
 void TranscodingService::Initialize() {
 
-    g_object_set(Server, "service", "8555", NULL);
+    //g_object_set(Server, "service", "8555", NULL);
+    gst_rtsp_server_set_address(Server, "0.0.0.0"); // 서버 주소 설정
+    gst_rtsp_server_set_service(Server, "8555"); // 서버 포트 설정
+    // 세션 풀 생성
+    GstRTSPSessionPool *pool = gst_rtsp_session_pool_new();
+    gst_rtsp_session_pool_set_max_sessions(pool, 100);
+    // 서버에 세션 풀 설정
+    gst_rtsp_server_set_session_pool(Server, pool);
+    // 세션 풀의 참조 카운트를 줄여 메모리 누수를 방지
+    g_object_unref(pool);
+
     gst_rtsp_server_attach(Server, nullptr);
     g_print("RTSP Server set IP:8555\n");
 }
@@ -132,7 +142,6 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
         g_print("Exception in AddRtsp: %s\n", e.what());
         return false;
     }
-    
 }
 
 /// <summary>
@@ -183,12 +192,6 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
             gst_rtsp_mount_points_remove_factory(mounts, fourthMount.c_str());
             mediaFactories.erase(it);
         }
-
-        // gst_rtsp_mount_points_remove_factory(mounts, firstMount.c_str());
-        // gst_rtsp_mount_points_remove_factory(mounts, secondMount.c_str());
-        // gst_rtsp_mount_points_remove_factory(mounts, thirdMount.c_str());
-        // gst_rtsp_mount_points_remove_factory(mounts, fourthMount.c_str());
-
         g_object_unref(mounts);
         g_print("Removed RTSP stream: %s\n", id.c_str());
 
