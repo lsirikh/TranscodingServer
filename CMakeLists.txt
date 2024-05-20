@@ -23,7 +23,7 @@ link_directories(${GSTREAMER_LIBRARY_DIRS})
 link_directories(${GSTREAMER_RTSP_SERVER_LIBRARY_DIRS})
 
 # 컴파일 대상 설정
-add_executable(RTSPTranscodingServer main.cpp TranscodingService.cpp UriParts.cpp datetime.cpp)
+add_executable(RTSPTranscodingServer main.cpp TranscodingService.cpp UriParts.cpp datetime.cpp CustomLogger.cpp)
 
 # 링크 설정
 target_link_libraries(RTSPTranscodingServer ${GSTREAMER_LIBRARIES} ${GSTREAMER_RTSP_SERVER_LIBRARIES} gstreamer-1.0 gstrtsp-1.0)

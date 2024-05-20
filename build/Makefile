@@ -129,6 +129,30 @@ RTSPTranscodingServer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTSPTranscodingServer.dir/build.make CMakeFiles/RTSPTranscodingServer.dir/build
 .PHONY : RTSPTranscodingServer/fast
 
+CustomLogger.o: CustomLogger.cpp.o
+.PHONY : CustomLogger.o
+
+# target to build an object file
+CustomLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTSPTranscodingServer.dir/build.make CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o
+.PHONY : CustomLogger.cpp.o
+
+CustomLogger.i: CustomLogger.cpp.i
+.PHONY : CustomLogger.i
+
+# target to preprocess a source file
+CustomLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTSPTranscodingServer.dir/build.make CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.i
+.PHONY : CustomLogger.cpp.i
+
+CustomLogger.s: CustomLogger.cpp.s
+.PHONY : CustomLogger.s
+
+# target to generate assembly for a file
+CustomLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTSPTranscodingServer.dir/build.make CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.s
+.PHONY : CustomLogger.cpp.s
+
 TranscodingService.o: TranscodingService.cpp.o
 .PHONY : TranscodingService.o
 
@@ -234,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RTSPTranscodingServer"
+	@echo "... CustomLogger.o"
+	@echo "... CustomLogger.i"
+	@echo "... CustomLogger.s"
 	@echo "... TranscodingService.o"
 	@echo "... TranscodingService.i"
 	@echo "... TranscodingService.s"
