@@ -35,6 +35,8 @@ void TranscodingService::StartServer() {
     // 서버에 세션 풀 설정
     gst_rtsp_server_set_session_pool(Server, pool);
 
+    g_object_set(pool, "max-sessions", 200, NULL);
+
     // 세션 풀 클린업을 위한 GSource 설정
     GMainContext *context = g_main_context_default();
     GSource *cleanup_source = gst_rtsp_session_pool_create_watch(pool);

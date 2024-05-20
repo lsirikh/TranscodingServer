@@ -6,12 +6,6 @@
 #include "CustomLogger.h" // CustomLogger 헤더 파일 포함
 
 void unrefGstClient(GstRTSPClient* client);
-//void client_connected_callback(GstRTSPServer* server, GstRTSPClient* client, gpointer user_data);
-// void closed_callback(GstRTSPClient* client, gpointer user_data);
-// void describe_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data);
-// void setup_request_callback(GstRTSPClient* client, GstRTSPContext* context);
-// void teardown_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data);
-
 
 std::shared_ptr<TranscodingService> service;  // (수정) 자동 정리를 위해 unique_ptr 사용
 std::recursive_mutex  processMutex;  // 클라이언트 목록에 대한 뮤텍스
@@ -164,120 +158,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// // 클라이언트가 연결될 때 호출될 콜백 함수
-// void client_connected_callback(GstRTSPServer* server, GstRTSPClient* client, gpointer user_data) {
-//     try
-//     {
-//         std::lock_guard<std::recursive_mutex> lock(processMutex);
-//         if (client == nullptr) {
-//             gst_println("Received a null client pointer.\n");
-//             return;
-//         }
-//         // 현재 시간 가져오기
-//         std::ostringstream oss = getCurrentTime();
 
-
-//         // client-close 이벤트에 onClientClosed 콜백 연결
-//         g_signal_connect(client, "describe-request", G_CALLBACK(describe_request_callback), user_data);
-//         g_signal_connect(client, "setup-request", G_CALLBACK(setup_request_callback), user_data);
-//         g_signal_connect(client, "closed", G_CALLBACK(closed_callback), user_data);
-//         g_signal_connect(client, "teardown-request", G_CALLBACK(teardown_request_callback ), user_data);
-
-//         // 클라이언트의 메모리 주소와 타입 크기 출력
-//         g_print("[%s]Client(%p) was connected to RTSP server!\n", oss.str().c_str(), client);
-//     }
-//     catch (const std::exception& e)
-//     {
-//         g_print("Exception in onClientConnected: %s\n", e.what());
-//     }
-// }
-
-// // TranscodingService.cpp 파일에 추가
-// void closed_callback(GstRTSPClient* client, gpointer user_data) {
-//     try {
-//         std::lock_guard<std::recursive_mutex> lock(processMutex);  // (수정) 스레드 안전성 확보
-
-//         // 현재 시간 가져오기
-//         std::ostringstream oss = getCurrentTime();
-
-//         g_print("[%s]Client(%p) has closed the connection!\n", oss.str().c_str(), client);
-//         service->RemoveClientWithClient(client);
-//     }
-//     catch (const std::exception& e) {
-//         g_print("Exception in onClientClosed: %s\n", e.what());
-//     }
-// }
-
-// void describe_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
-//     try
-//     {
-//         std::lock_guard<std::recursive_mutex> lock(processMutex);
-//          // 현재 시간 가져오기
-//         std::ostringstream oss = getCurrentTime();
-//         const GstRTSPUrl* url = context->uri;
-//         if (url && url->abspath) {
-//             g_print("[%s]Client(%s) was connected to URL: %s\n", oss.str().c_str(), "", url->abspath);
-//             service->AddClientInfo(client, "", url->abspath);
-//         }
-//         else {
-//             g_print("[%s]Client(%s) can't be connected to URL: %s\n", oss.str().c_str(), "", url->abspath);
-//         }
-
-//     }
-//     catch (const std::exception& e) {
-//         g_print("Exception in onClientDescribe: %s\n", e.what());
-//     }
-// }
-
-// void setup_request_callback(GstRTSPClient* client, GstRTSPContext* context) {
-//     try
-//     {
-//         std::lock_guard<std::recursive_mutex> lock(processMutex);
-//         // RTSUrl 객체 얻기
-//         const GstRTSPUrl* url = context->uri;
-//          // 현재 시간 가져오기
-//         std::ostringstream oss = getCurrentTime();
-//         // RTSSession 객체 얻기
-//         GstRTSPSession* session = context->session;
-//         const gchar* session_id = "";
-//         if (session) {
-//             session_id = gst_rtsp_session_get_sessionid (session);
-//             g_print("[%s]Session id: %s\n", oss.str().c_str(), session_id);
-            
-//             // 세션의 타임아웃 확인
-//             guint timeout = gst_rtsp_session_get_timeout(session);
-//             g_print("[%s]Session timeout: %u seconds\n", oss.str().c_str(), timeout);
-
-//             // 현재 monotonic 시간 얻기
-//             gint64 now = g_get_monotonic_time();
-//             // 세션 만료까지 남은 시간 계산
-//             gint timeout_msec = gst_rtsp_session_next_timeout_usec(session, now) / 1000;
-//             g_print("[%s]Session will timeout in: %d seconds\n", oss.str().c_str(), timeout_msec);
-//             // Prevent session from expiring.
-//             gst_rtsp_session_prevent_expire(session);
-//         } else {
-//             g_print("[%s]No session associated with the context.\n", oss.str().c_str());
-//         }
-//     }
-//     catch (const std::exception& e) {
-//         g_print("Exception in onClientSetup: %s\n", e.what());
-//     }
-// }
-
-
-// void teardown_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
-    
-//     try
-//     {
-//         std::lock_guard<std::recursive_mutex> lock(processMutex);
-//          // 현재 시간 가져오기
-//         std::ostringstream oss = getCurrentTime();
-//         g_print("[%s] Session will be tear-downed.\n", oss.str().c_str());
-//     }
-//     catch (const std::exception& e) {
-//         g_print("Exception in onClientSetup: %s\n", e.what());
-//     }
-// }
 
 void unrefGstClient(GstRTSPClient* client) {
     //std::lock_guard<std::recursive_mutex> lock(processMutex);  // (수정) 동기화 추가
