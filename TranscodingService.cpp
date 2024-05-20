@@ -1,9 +1,9 @@
 #include <glib.h>
 #include "headers/UriParts.h"
 #include "headers/TranscodingService.h"
+#include "datetime.h"
 
 TranscodingService::TranscodingService() {
-    gst_init(nullptr, nullptr);
     Server = gst_rtsp_server_new();
     mainLoop = g_main_loop_new(nullptr, FALSE);
 }
@@ -15,40 +15,164 @@ TranscodingService::~TranscodingService() {
     g_main_loop_unref(mainLoop);
 }
 
-void TranscodingService::Initialize() {
+void TranscodingService::StartServer() {
 
     //g_object_set(Server, "service", "8555", NULL);
     gst_rtsp_server_set_address(Server, "0.0.0.0"); // 서버 주소 설정
     gst_rtsp_server_set_service(Server, "8555"); // 서버 포트 설정
+
+    //// Server connects event for "client-connected"
+    //g_signal_connect(Server, "client-connected", G_CALLBACK(TranscodingService::client_connected_callback), NULL);
+
+    // std::bind를 사용하여 멤버 함수와 this 포인터를 함께 연결
+    g_signal_connect(Server, "client-connected", G_CALLBACK(+[](GstRTSPServer* server, GstRTSPClient* client, gpointer user_data) {
+        auto* self = static_cast<TranscodingService*>(user_data);
+        self->client_connected_callback(server, client, nullptr);
+    }), this);
+
     // 세션 풀 생성
     GstRTSPSessionPool *pool = gst_rtsp_session_pool_new();
-    gst_rtsp_session_pool_set_max_sessions(pool, 100);
     // 서버에 세션 풀 설정
     gst_rtsp_server_set_session_pool(Server, pool);
+
+    // 세션 풀 클린업을 위한 GSource 설정
+    GMainContext *context = g_main_context_default();
+    GSource *cleanup_source = gst_rtsp_session_pool_create_watch(pool);
+    g_source_set_callback(cleanup_source, (GSourceFunc) +[](gpointer user_data) -> gboolean {
+        auto* self = static_cast<TranscodingService*>(user_data);
+        self->session_cleanup(static_cast<GstRTSPSessionPool*>(user_data));
+        return G_SOURCE_CONTINUE;
+    }, pool, NULL);
+    g_source_attach(cleanup_source, context);
+
     // 세션 풀의 참조 카운트를 줄여 메모리 누수를 방지
     g_object_unref(pool);
 
     gst_rtsp_server_attach(Server, nullptr);
     g_print("RTSP Server set IP:8555\n");
-}
-
-void TranscodingService::StartServer() {
-    g_print("RTSPServer StartServer\n");
-    if (!serverThread.joinable()) {
-        serverThread = std::thread([this]() { g_main_loop_run(mainLoop); });
-    }
+    g_main_loop_run(mainLoop);
 }
 
 void TranscodingService::StopServer() {
-    /*rtspServer->StopServer();
-    delete rtspServer;*/
-
     g_main_loop_quit(mainLoop);
-    if (serverThread.joinable()) {
-        serverThread.join();
+}
+
+// 클라이언트가 연결될 때 호출될 콜백 함수
+void TranscodingService::client_connected_callback(GstRTSPServer* server, GstRTSPClient* client, gpointer user_data) {
+    try
+    {
+        std::lock_guard<std::recursive_mutex> lock(processMutex);
+        if (client == nullptr) {
+            gst_println("Received a null client pointer.\n");
+            return;
+        }
+        // 현재 시간 가져오기
+        std::ostringstream oss = getCurrentTime();
+
+        // 클라이언트의 메모리 주소와 타입 크기 출력
+        g_print("[%s]Client(%p) was connected to RTSP server!\n", oss.str().c_str(), client);
+
+        // 클라이언트 연결 시 처리할 로직 추가
+        g_signal_connect(client, "closed", G_CALLBACK(+[](GstRTSPClient* client, gpointer user_data) {
+            static_cast<TranscodingService*>(user_data)->closed_callback(client, nullptr);
+        }), this);
+
+        g_signal_connect(client, "describe-request", G_CALLBACK(+[](GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
+            static_cast<TranscodingService*>(user_data)->describe_request_callback(client, context, nullptr);
+        }), this);
+
+        g_signal_connect(client, "setup-request", G_CALLBACK(+[](GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
+            static_cast<TranscodingService*>(user_data)->setup_request_callback(client, context);
+        }), this);
+
+        g_signal_connect(client, "teardown-request", G_CALLBACK(+[](GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
+            static_cast<TranscodingService*>(user_data)->teardown_request_callback(client, context, nullptr);
+        }), this);
+    }
+    catch (const std::exception& e)
+    {
+        g_print("Exception in onClientConnected: %s\n", e.what());
     }
 }
 
+void TranscodingService::closed_callback(GstRTSPClient* client, gpointer user_data) {
+    std::lock_guard<std::recursive_mutex> lock(processMutex);  // (수정) 스레드 안전성 확보
+
+    // 현재 시간 가져오기
+    std::ostringstream oss = getCurrentTime();
+
+    g_print("[%s]Client(%p) has closed the connection!\n", oss.str().c_str(), client);
+    RemoveClientWithClient(client);
+}
+
+void TranscodingService::describe_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
+    g_print("Describe request: %p\n", client);
+}
+
+void TranscodingService::setup_request_callback(GstRTSPClient* client, GstRTSPContext* context) {
+    try
+    {
+        std::lock_guard<std::recursive_mutex> lock(processMutex);
+        // RTSUrl 객체 얻기
+        const GstRTSPUrl* url = context->uri;
+         // 현재 시간 가져오기
+        std::ostringstream oss = getCurrentTime();
+        // RTSSession 객체 얻기
+        GstRTSPSession* session = context->session;
+        const gchar* session_id = "";
+        if (session) {
+            session_id = gst_rtsp_session_get_sessionid (session);
+            g_print("[%s]Session id: %s\n", oss.str().c_str(), session_id);
+            
+            // 세션의 타임아웃 확인
+            guint timeout = gst_rtsp_session_get_timeout(session);
+            g_print("[%s]Session timeout: %u seconds\n", oss.str().c_str(), timeout);
+
+            // 현재 monotonic 시간 얻기
+            gint64 now = g_get_monotonic_time();
+            // 세션 만료까지 남은 시간 계산
+            gint timeout_msec = gst_rtsp_session_next_timeout_usec(session, now) / 1000;
+            g_print("[%s]Session will timeout in: %d seconds\n", oss.str().c_str(), timeout_msec);
+            // Prevent session from expiring.
+            gst_rtsp_session_prevent_expire(session);
+            
+        } else {
+            g_print("[%s]No session associated with the context.\n", oss.str().c_str());
+        }
+        if (url && url->abspath) {
+            g_print("[%s]Client(%s) was connected to URL: %s\n", oss.str().c_str(), session_id, url->abspath);
+            AddClientInfo(client, session_id, url->abspath);
+        }
+        else {
+            g_print("[%s]Client(%s) can't be connected to URL: %s\n", oss.str().c_str(), session_id, url->abspath);
+        }
+    }
+    catch (const std::exception& e) {
+        g_print("Exception in onClientSetup: %s\n", e.what());
+    }
+}
+
+void TranscodingService::teardown_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
+    try
+    {
+        std::lock_guard<std::recursive_mutex> lock(processMutex);
+        // 현재 시간 가져오기
+        std::ostringstream oss = getCurrentTime();
+        g_print("[%s] Session will be tear-downed.\n", oss.str().c_str());
+        GstRTSPSessionPool* session_pool = gst_rtsp_client_get_session_pool (client);
+        session_cleanup(session_pool);
+    }
+    catch (const std::exception& e) {
+        g_print("Exception in onClientSetup: %s\n", e.what());
+    }
+}
+
+void TranscodingService::session_cleanup(GstRTSPSessionPool* pool) {
+    if(pool != nullptr){
+        guint removed_sessions = gst_rtsp_session_pool_cleanup(pool);
+        g_print("Cleaned up %u sessions\n", removed_sessions);
+    }
+}
 
 /// <summary>
 /// 
@@ -58,14 +182,13 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
     try
     {
         std::lock_guard<std::recursive_mutex> lock(processMutex);
-        UriParts uriParts;
-        uriParts.parseUri(uri);
 
-        GstRTSPMountPoints* mounts = gst_rtsp_server_get_mount_points(Server);
-        if (!mounts) {
-            std::cerr << "Failed to get mount points." << std::endl;
+        if(!checkUri(uri)) {
             return false;
         }
+
+        UriParts uriParts;
+        uriParts.parseUri(uri);
 
         std::string firstMount = "/" + uriParts.id + "/first";
         std::string secondMount = "/" + uriParts.id + "/second";
@@ -91,6 +214,11 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
 
         if(isRegistered) return false;
 
+        GstRTSPMountPoints* mounts = gst_rtsp_server_get_mount_points(Server);
+        if (!mounts) {
+            std::cerr << "Failed to get mount points." << std::endl;
+            return false;
+        }
 
         GstRTSPMediaFactory* firstFactory = gst_rtsp_media_factory_new();
         //latency=0 ! rtph264depay ! rtph264pay name=pay0 pt=96
@@ -110,19 +238,13 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
         gst_rtsp_media_factory_set_launch(forthFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! queue ! videoscale ! videorate ! video/x-raw,framerate=10/1,width=320,height=240 ! x264enc bitrate=400 speed-preset=ultrafast tune=zerolatency cabac=true ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(forthFactory, TRUE);
 
-        // g_print("RTSP mount points : %s\n", ("/" + uriParts.id + "/first").c_str());
-        // g_print("RTSP mount points : %s\n", ("/" + uriParts.id + "/second").c_str());
-        // g_print("RTSP mount points : %s\n", ("/" + uriParts.id + "/third").c_str());
-        // g_print("RTSP mount points : %s\n", ("/" + uriParts.id + "/fourth").c_str());
-        // gst_rtsp_mount_points_add_factory(mounts, ("/" + uriParts.id + "/first").c_str(), firstFactory);
-        // gst_rtsp_mount_points_add_factory(mounts, ("/" + uriParts.id + "/second").c_str(), secondFactory);
-        // gst_rtsp_mount_points_add_factory(mounts, ("/" + uriParts.id + "/third").c_str(), thirdFactory);
-        // gst_rtsp_mount_points_add_factory(mounts, ("/" + uriParts.id + "/fourth").c_str(), forthFactory);
+        // 현재 시간 가져오기
+        std::ostringstream oss = getCurrentTime();
 
-        g_print("RTSP mount points : %s\n", firstMount.c_str());
-        g_print("RTSP mount points : %s\n", secondMount.c_str());
-        g_print("RTSP mount points : %s\n", thirdMount.c_str());
-        g_print("RTSP mount points : %s\n", fourthMount.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), firstMount.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), secondMount.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), thirdMount.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), fourthMount.c_str());
 
         gst_rtsp_mount_points_add_factory(mounts, firstMount.c_str(), firstFactory);
         mediaFactories[firstMount] = firstFactory;
@@ -134,7 +256,8 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
         mediaFactories[fourthMount] = forthFactory;
         g_object_unref(mounts);
 
-        g_print("Added RTSP stream: %s\n", uri.c_str());
+        oss = getCurrentTime();
+        g_print("[%s]Added RTSP stream: %s\n", oss.str().c_str(), uri.c_str());
 
         return true;
     }
@@ -152,6 +275,10 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
     try
     {
         std::lock_guard<std::recursive_mutex> lock(processMutex);
+        // Before Remove RTSP media factory, client session should be disconnected!
+        RemoveClientWithId(id);
+
+        //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         // Logic to remove an RTSP URI from the server
         // This function needs actual GStreamer RTSP server details to be implemented
         GstRTSPMountPoints* mounts = gst_rtsp_server_get_mount_points(Server);
@@ -192,10 +319,11 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
             gst_rtsp_mount_points_remove_factory(mounts, fourthMount.c_str());
             mediaFactories.erase(it);
         }
+        // 현재 시간 가져오기
+        std::ostringstream oss = getCurrentTime();
+        g_print("[%s]Removed RTSP stream: %s\n", oss.str().c_str(), id.c_str());
+        
         g_object_unref(mounts);
-        g_print("Removed RTSP stream: %s\n", id.c_str());
-
-        RemoveClientWithId(id);
         return true;
     }
     catch (const std::exception& e)
@@ -206,10 +334,36 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
     
 }
 
-void TranscodingService::AddClientInfo(GstRTSPClient* client, const std::string& uri) {
+bool TranscodingService::isValidUri(const std::string& uri) {
+    return gst_uri_is_valid(uri.c_str());
+}
+
+bool TranscodingService::checkUri(const std::string& uri) {
+    std::ostringstream oss = getCurrentTime();
+    if (!isValidUri(uri)) {
+        // 현재 시간 가져오기
+        g_print("[%s]Invalid URI: %s\n", oss.str().c_str(), uri.c_str());
+        return false;
+    }
+
+    // if (canConnectToUri(uri)) {
+    //     // 현재 시간 가져오기
+    //     g_print("[%s]Can connect to URI: %s\n", oss.str().c_str(), uri.c_str());
+    //     return true;
+    // } else {
+    //     g_print("[%s]Cannot connect to URI: %s\n", oss.str().c_str(), uri.c_str());
+    //     return false;
+    // }
+    
+    return true;
+}
+
+void TranscodingService::AddClientInfo(GstRTSPClient* client, const std::string& id, const std::string& uri) {
     std::lock_guard<std::recursive_mutex> lock(processMutex);
-    clientInfos.push_back(std::shared_ptr<ClientInfo>(new ClientInfo(client, uri)));
-    g_print("Current number of clients: %ld\n", clientInfos.size());
+    // 현재 시간 가져오기
+    std::ostringstream oss = getCurrentTime();
+    clientInfos.push_back(std::shared_ptr<ClientInfo>(new ClientInfo(client, id, uri)));
+    g_print("[%s]Current number of clients: %ld\n", oss.str().c_str(), clientInfos.size());
 }
 
 void TranscodingService::RemoveClientWithClient(GstRTSPClient* client) {
@@ -257,10 +411,17 @@ void TranscodingService::RemoveClientWithId(const std::string& id) {
             if ((*it)->uri.find(mountPath) != std::string::npos) {
                 g_print("Removing client connected to: %s\n", (*it)->uri.c_str());
                 GstRTSPConnection* conn = gst_rtsp_client_get_connection((*it)->client);
-                GstRTSPResult ret = gst_rtsp_connection_close(conn);
-
-                if(ret == 0)
-                    g_print("Client was disconnected : %s\n", "OK");
+                if (conn) {
+                    GstRTSPResult ret = gst_rtsp_connection_close(conn);
+                    if(ret == GST_RTSP_OK) {
+                        g_print("Client was disconnected : %s\n", "OK");
+                    } else {
+                        g_print("Client disconnection failed!(%d)\n", ret);
+                    }
+                    g_object_unref(conn); // Ensure connection object is unrefed properly
+                } else {
+                    g_print("Failed to get connection for client.\n");
+                }
                 
                 it = clientInfos.erase(it); 
             }
@@ -274,4 +435,46 @@ void TranscodingService::RemoveClientWithId(const std::string& id) {
     {
         g_print("Exception in removeClient: %s\n", e.what());
     }
+}
+
+crow::json::wvalue TranscodingService::GetClientSessions() {
+    std::lock_guard<std::recursive_mutex> lock(processMutex);
+    crow::json::wvalue result;
+    result["result"] = "SUCCESS";
+    result["count"] = static_cast<int>(clientInfos.size());
+    crow::json::wvalue::list list;
+    for (const auto& clientInfo : clientInfos) {
+        crow::json::wvalue session_info;
+        session_info["session_id"] = clientInfo->session_id;
+        session_info["uri"] = clientInfo->uri;
+        list.push_back(std::move(session_info));
+    }
+    result["list"] = std::move(list);
+    return result;
+}
+
+crow::json::wvalue TranscodingService::GetMedias() {
+    std::lock_guard<std::recursive_mutex> lock(processMutex);
+    std::unordered_map<std::string, std::vector<std::string>> groupedUris;
+    for (const auto& pair : mediaFactories) {
+        std::string key = pair.first.substr(0, pair.first.rfind('/'));
+        groupedUris[key].push_back(pair.first);
+    }
+
+    crow::json::wvalue result;
+    result["result"] = "SUCCESS";
+    result["count"] = static_cast<int>(groupedUris.size());
+    crow::json::wvalue::list list;
+
+    for (const auto& group : groupedUris) {
+        crow::json::wvalue media_info;
+        for (const auto& uri : group.second) {
+            std::string suffix = uri.substr(uri.rfind('/') + 1);
+            media_info["uri" + suffix] = uri;
+        }
+        list.push_back(std::move(media_info));
+    }
+
+    result["list"] = std::move(list);
+    return result;
 }

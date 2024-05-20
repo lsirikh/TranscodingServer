@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o"
+  "CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o.d"
   "CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o"
   "CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o.d"
   "CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o"

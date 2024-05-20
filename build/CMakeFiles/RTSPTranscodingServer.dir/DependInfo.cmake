@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/lsirikh/RTSPTranscodingServer/CustomLogger.cpp" "CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o" "gcc" "CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o.d"
   "/home/lsirikh/RTSPTranscodingServer/TranscodingService.cpp" "CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o" "gcc" "CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o.d"
   "/home/lsirikh/RTSPTranscodingServer/UriParts.cpp" "CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o" "gcc" "CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o.d"
   "/home/lsirikh/RTSPTranscodingServer/datetime.cpp" "CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o" "gcc" "CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o.d"

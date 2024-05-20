@@ -52,3 +52,4 @@ void UriParts::parseUri(const std::string& uri) {
         }
     }
 }
+
