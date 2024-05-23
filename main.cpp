@@ -50,18 +50,44 @@ void startApiServer() {
         }
 
         std::vector<std::string> failedUrls;
-        for (const auto& item : body["rtsp_uris"]) {
-            if (item.t() != crow::json::type::Object || !item.has("url")) {
+        crow::json::wvalue result;
+        crow::json::wvalue::list response_list;
+
+         for (const auto& item : body["rtsp_uris"]) {
+            if (item.t() != crow::json::type::Object || !item.has("id") || !item.has("url")) {
                 return crow::response(400);
             }
+            std::string id = item["id"].s();
             std::string url = item["url"].s();
-            bool ret = service->AddRtsp(url);
-            if (!ret) {
+
+            auto uriParts = service->AddRtsp(id, url);
+            if (uriParts) {
+                crow::json::wvalue uri_info;
+                uri_info["id"] = id;
+                uri_info["full_path"] = uriParts->full_path;
+                uri_info["user"] = uriParts->username;
+                uri_info["pass"] = uriParts->password;
+                uri_info["ip"] = uriParts->ip;
+                uri_info["port"] = uriParts->port;
+                uri_info["path"] = uriParts->path;
+                uri_info["ready_time"] = uriParts->ready_time;
+
+                crow::json::wvalue mount_points;
+                mount_points["uri_first"] = uriParts->mount_points.uri_first;
+                mount_points["uri_second"] = uriParts->mount_points.uri_second;
+                mount_points["uri_third"] = uriParts->mount_points.uri_third;
+                mount_points["uri_fourth"] = uriParts->mount_points.uri_fourth;
+
+                uri_info["mount_points"] = std::move(mount_points);
+                response_list.push_back(std::move(uri_info));
+            } else {
                 failedUrls.push_back(url);
             }
         }
 
-        crow::json::wvalue result;
+        result["list"] = std::move(response_list);
+        result["count"] = static_cast<int>(response_list.size());
+
         if (failedUrls.empty()) {
             result["result"] = "SUCCESS";
             result["message"] = "All url was added successfully";

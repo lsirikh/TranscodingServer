@@ -34,7 +34,7 @@ std::string UriParts::generate_uuid() {
 //     return std::to_string(millis);
 // }
 
-void UriParts::parseUri(const std::string& uri) {
+void UriParts::parseUri(const std::string& iid, const std::string& uri) {
     full_path = uri; // Save the full URI
     size_t pos = uri.find("//");
     if (pos == std::string::npos) {
@@ -72,7 +72,7 @@ void UriParts::parseUri(const std::string& uri) {
         port = "554";
     }
 
-    id = generate_uuid();
+    id = iid;
 
     mount_points.uri_first = "/" + id + "/first";
     mount_points.uri_second = "/" + id + "/second";

@@ -21,9 +21,10 @@ struct UriParts {
     std::string path;
     std::string id;
     std::string full_path;
+    std::string ready_time;
     MountPoints mount_points;
 
-    void parseUri(const std::string& uri);
+    void parseUri(const std::string& iid, const std::string& uri);
 private:
     std::string generate_uuid();
 };

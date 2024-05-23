@@ -41,7 +41,7 @@ public:
     void AddClientInfo(GstRTSPClient* client, const std::string& id, const std::string& uri);
     void RemoveClientWithClient(GstRTSPClient* client);
     void RemoveClientWithId(const std::string& id);
-    bool AddRtsp(const std::string& uri);
+    std::unique_ptr<UriParts> AddRtsp(const std::string& id, const std::string& uri);
     bool RemoveRtsp(const std::string& id);
     crow::json::wvalue GetClientSessions(); // JSON 형식으로 세션 정보를 반환하는 메소드 추가
     crow::json::wvalue GetMedias(); // JSON 형식으로 미디어 정보를 반환하는 메소드 추가
@@ -49,8 +49,8 @@ public:
 private:
     GMainLoop* mainLoop;
     std::list<std::shared_ptr<ClientInfo>> clientInfos;
-    std::unordered_map<std::string, GstRTSPMediaFactory*> mediaFactories;
-    std::unordered_map<std::string, UriParts> uriPartsMap;
+    std::map<std::string, GstRTSPMediaFactory*> mediaFactories;
+    std::map<std::string, UriParts> uriPartsMap;
     std::string serverPort;
     std::recursive_mutex  processMutex;
     std::thread serverThread;
