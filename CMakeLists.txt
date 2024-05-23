@@ -4,16 +4,18 @@ cmake_minimum_required(VERSION 3.10)
 project(RTSPTranscodingServer VERSION 1.0)
 
 # C++ 표준 설정
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # GStreamer 패키지 찾기
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GSTREAMER REQUIRED gstreamer-1.0>=1.4)
-pkg_check_modules(GSTREAMER_RTSP_SERVER REQUIRED gstreamer-rtsp-server-1.0>=1.4)
+pkg_check_modules(GST REQUIRED gstreamer-1.0 gstreamer-base-1.0 gstreamer-video-1.0 gstreamer-rtsp-server-1.0)
 
 # 헤더 파일 포함 디렉토리 설정
 #include(FindPkgConfig)
+#include_directories(/usr/local/cuda/include)
+include_directories(${GST_INCLUDE_DIRS})
+link_directories(${GST_LIBRARY_DIRS})
 include_directories(${GSTREAMER_INCLUDE_DIRS})
 include_directories(${GSTREAMER_RTSP_SERVER_INCLUDE_DIRS})
 include_directories(headers)

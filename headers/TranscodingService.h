@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <crow/json.h> // Crow JSON 헤더 추가
 #include <regex>
+#include "UriParts.h"
 
 struct ClientInfo {
     GstRTSPClient* client;
@@ -49,6 +50,7 @@ private:
     GMainLoop* mainLoop;
     std::list<std::shared_ptr<ClientInfo>> clientInfos;
     std::unordered_map<std::string, GstRTSPMediaFactory*> mediaFactories;
+    std::unordered_map<std::string, UriParts> uriPartsMap;
     std::string serverPort;
     std::recursive_mutex  processMutex;
     std::thread serverThread;

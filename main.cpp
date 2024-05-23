@@ -14,34 +14,46 @@ std::recursive_mutex  processMutex;  // 클라이언트 목록에 대한 뮤텍�
 void startApiServer() {
     crow::SimpleApp app;
 
-    // 루트 엔드포인트 정의
-    CROW_ROUTE(app, "/")([](){
-        return "Hello world";
-    });
+    // // 루트 엔드포인트 정의
+    // CROW_ROUTE(app, "/")([](){
+    //     return "Hello world";
+    // });
 
-    // JSON 응답을 반환하는 엔드포인트 정의
-    CROW_ROUTE(app, "/json")([]{
-        crow::json::wvalue x({{"message", "Hello, World!"}});
-        x["message2"] = "Hello, World.. Again!";
-        return x;
-    });
+    // // JSON 응답을 반환하는 엔드포인트 정의
+    // CROW_ROUTE(app, "/json")([]{
+    //     crow::json::wvalue x({{"message", "Hello, World!"}});
+    //     x["message2"] = "Hello, World.. Again!";
+    //     return x;
+    // });
 
-    // 경로 파라미터를 사용하는 엔드포인트 정의
-    CROW_ROUTE(app, "/hello/<string>")([](const std::string& name){
-        std::ostringstream os;
-        os << "Hello, " << name << "!";
-        return crow::response(os.str());
+    // // 경로 파라미터를 사용하는 엔드포인트 정의
+    // CROW_ROUTE(app, "/hello/<string>")([](const std::string& name){
+    //     std::ostringstream os;
+    //     os << "Hello, " << name << "!";
+    //     return crow::response(os.str());
+    // });
+
+    // /status 경로에 대한 GET 요청을 처리하는 엔드포인트 정의
+    CROW_ROUTE(app, "/status").methods(crow::HTTPMethod::Get)([](){
+        crow::json::wvalue result;
+        result["name"] = "Rtsp Server";
+        result["version"] = "v1.0";
+        result["status"] = "Active";
+        return crow::response(result);
     });
 
     // POST 요청을 처리하는 엔드포인트 정의
     CROW_ROUTE(app, "/add").methods(crow::HTTPMethod::Post)([](const crow::request& req){
         auto body = crow::json::load(req.body);
-        if (!body || body.t() != crow::json::type::List) {
+        if (!body || body.t() != crow::json::type::Object || !body.has("rtsp_uris") || body["rtsp_uris"].t() != crow::json::type::List) {
             return crow::response(400);
         }
 
         std::vector<std::string> failedUrls;
-        for (const auto& item : body) {
+        for (const auto& item : body["rtsp_uris"]) {
+            if (item.t() != crow::json::type::Object || !item.has("url")) {
+                return crow::response(400);
+            }
             std::string url = item["url"].s();
             bool ret = service->AddRtsp(url);
             if (!ret) {
@@ -72,12 +84,15 @@ void startApiServer() {
 
     CROW_ROUTE(app, "/remove").methods(crow::HTTPMethod::Post)([](const crow::request& req){
         auto body = crow::json::load(req.body);
-        if (!body || body.t() != crow::json::type::List) {
+                if (!body || body.t() != crow::json::type::Object || !body.has("rtsp_ids") || body["rtsp_ids"].t() != crow::json::type::List) {
             return crow::response(400);
         }
 
         std::vector<std::string> failedUrls;
-        for (const auto& item : body) {
+        for (const auto& item : body["rtsp_ids"]) {
+            if (item.t() != crow::json::type::Object || !item.has("id")) {
+                return crow::response(400);
+            }
             std::string id = item["id"].s();
             bool ret = service->RemoveRtsp(id);
             if (!ret) {

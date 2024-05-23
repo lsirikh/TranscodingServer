@@ -2,6 +2,7 @@
 #include "headers/UriParts.h"
 #include "headers/TranscodingService.h"
 #include "datetime.h"
+// #include <nvEncodeAPI.h>
 
 TranscodingService::TranscodingService() {
     Server = gst_rtsp_server_new();
@@ -34,7 +35,6 @@ void TranscodingService::StartServer() {
     GstRTSPSessionPool *pool = gst_rtsp_session_pool_new();
     // 서버에 세션 풀 설정
     gst_rtsp_server_set_session_pool(Server, pool);
-
     g_object_set(pool, "max-sessions", 200, NULL);
 
     // 세션 풀 클린업을 위한 GSource 설정
@@ -99,7 +99,6 @@ void TranscodingService::client_connected_callback(GstRTSPServer* server, GstRTS
 
 void TranscodingService::closed_callback(GstRTSPClient* client, gpointer user_data) {
     std::lock_guard<std::recursive_mutex> lock(processMutex);  // (수정) 스레드 안전성 확보
-
     // 현재 시간 가져오기
     std::ostringstream oss = getCurrentTime();
 
@@ -108,7 +107,10 @@ void TranscodingService::closed_callback(GstRTSPClient* client, gpointer user_da
 }
 
 void TranscodingService::describe_request_callback(GstRTSPClient* client, GstRTSPContext* context, gpointer user_data) {
-    g_print("Describe request: %p\n", client);
+    std::lock_guard<std::recursive_mutex> lock(processMutex);  // (수정) 스레드 안전성 확보
+    // 현재 시간 가져오기
+    std::ostringstream oss = getCurrentTime();
+    g_print("[%s]Client(%p) has been described!\n", oss.str().c_str(), client);
 }
 
 void TranscodingService::setup_request_callback(GstRTSPClient* client, GstRTSPContext* context) {
@@ -192,29 +194,52 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
         UriParts uriParts;
         uriParts.parseUri(uri);
 
-        std::string firstMount = "/" + uriParts.id + "/first";
-        std::string secondMount = "/" + uriParts.id + "/second";
-        std::string thirdMount = "/" + uriParts.id + "/third";
-        std::string fourthMount = "/" + uriParts.id + "/fourth";
-        bool isRegistered = false;
-        if (mediaFactories.find(firstMount) != mediaFactories.end()) {
-            std::cerr << "Mount point already exists: " << firstMount << std::endl;
-            isRegistered = true;
-        }
-        if (mediaFactories.find(secondMount) != mediaFactories.end()) {
-            std::cerr << "Mount point already exists: " << secondMount << std::endl;
-            isRegistered = true;
-        }
-        if (mediaFactories.find(thirdMount) != mediaFactories.end()) {
-            std::cerr << "Mount point already exists: " << thirdMount << std::endl;
-            isRegistered = true;
-        }
-        if (mediaFactories.find(fourthMount) != mediaFactories.end()) {
-            std::cerr << "Mount point already exists: " << fourthMount << std::endl;
-            isRegistered = true;
+        std::cout << "Full Path: " << uriParts.full_path << std::endl;
+        std::cout << "Username: " << uriParts.username << std::endl;
+        std::cout << "Password: " << uriParts.password << std::endl;
+        std::cout << "IP: " << uriParts.ip << std::endl;
+        std::cout << "Port: " << uriParts.port << std::endl;
+        std::cout << "Path: " << uriParts.path << std::endl;
+        std::cout << "ID: " << uriParts.id << std::endl;
+
+
+
+        // std::string firstMount = "/" + uriParts.id + "/first";
+        // std::string secondMount = "/" + uriParts.id + "/second";
+        // std::string thirdMount = "/" + uriParts.id + "/third";
+        // std::string fourthMount = "/" + uriParts.id + "/fourth";
+        // bool isRegistered = false;
+        // if (mediaFactories.find(firstMount) != mediaFactories.end()) {
+        //     std::cerr << "Mount point already exists: " << firstMount << std::endl;
+        //     isRegistered = true;
+        // }
+        // if (mediaFactories.find(secondMount) != mediaFactories.end()) {
+        //     std::cerr << "Mount point already exists: " << secondMount << std::endl;
+        //     isRegistered = true;
+        // }
+        // if (mediaFactories.find(thirdMount) != mediaFactories.end()) {
+        //     std::cerr << "Mount point already exists: " << thirdMount << std::endl;
+        //     isRegistered = true;
+        // }
+        // if (mediaFactories.find(fourthMount) != mediaFactories.end()) {
+        //     std::cerr << "Mount point already exists: " << fourthMount << std::endl;
+        //     isRegistered = true;
+        // }
+
+        // if(isRegistered) return false;
+
+        // Check if the full_path already exists
+        for (const auto& pair : uriPartsMap) {
+            if (pair.second.full_path == uriParts.full_path) {
+                std::cerr << "Full path already exists: " << uriParts.full_path << std::endl;
+                return false;
+            }
         }
 
-        if(isRegistered) return false;
+        if (uriPartsMap.find(uriParts.id) != uriPartsMap.end()) {
+            std::cerr << "Mount point already exists for ID: " << uriParts.id << std::endl;
+            return false;
+        }
 
         GstRTSPMountPoints* mounts = gst_rtsp_server_get_mount_points(Server);
         if (!mounts) {
@@ -228,35 +253,62 @@ bool TranscodingService::AddRtsp(const std::string& uri) {
         gst_rtsp_media_factory_set_launch(firstFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! rtph264pay name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(firstFactory, TRUE);
 
+        // GstRTSPMediaFactory* secondFactory = gst_rtsp_media_factory_new();
+        // gst_rtsp_media_factory_set_launch(secondFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! vaapih264dec ! videoconvert ! queue ! videoscale ! videorate ! video/x-raw,framerate=15/1,width=1280,height=960 ! vaapih264enc bitrate=2000 ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        // gst_rtsp_media_factory_set_shared(secondFactory, TRUE);
+
+        // GstRTSPMediaFactory* thirdFactory = gst_rtsp_media_factory_new();
+        // gst_rtsp_media_factory_set_launch(thirdFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! vaapih264dec ! queue ! videoconvert ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=640,height=480 ! vaapih264enc bitrate=800 ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        // gst_rtsp_media_factory_set_shared(thirdFactory, TRUE);
+
+        // GstRTSPMediaFactory* forthFactory = gst_rtsp_media_factory_new();
+        // gst_rtsp_media_factory_set_launch(forthFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! vaapih264dec ! videoconvert ! queue ! videoscale ! videorate ! video/x-raw,framerate=10/1,width=320,height=240 ! vaapih264enc bitrate=400 ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        // gst_rtsp_media_factory_set_shared(forthFactory, TRUE);
+
         GstRTSPMediaFactory* secondFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(secondFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec ! videoconvert ! queue ! videoscale ! videorate ! video/x-raw,framerate=15/1,width=1280,height=960 ! nvh264enc bitrate=2000 speed-preset=ultrafast tune=zerolatency cabac=true ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(secondFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec  ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=15/1,width=1280,height=960 ! queue ! x264enc bitrate=2000 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(secondFactory, TRUE);
-
         GstRTSPMediaFactory* thirdFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(thirdFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec ! videoconvert ! queue ! videoscale ! videorate ! video/x-raw,framerate=10/1,width=640,height=480 ! nvh264enc bitrate=800 speed-preset=ultrafast tune=zerolatency cabac=true ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(thirdFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec  ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=640,height=480 ! queue ! x264enc bitrate=800 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(thirdFactory, TRUE);
-
         GstRTSPMediaFactory* forthFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(forthFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec ! videoconvert ! queue ! videoscale ! videorate ! video/x-raw,framerate=10/1,width=320,height=240 ! nvh264enc bitrate=400 speed-preset=ultrafast tune=zerolatency cabac=true ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(forthFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec  ! queue !  videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=320,height=240 ! queue ! x264enc bitrate=400 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(forthFactory, TRUE);
 
         // 현재 시간 가져오기
         std::ostringstream oss = getCurrentTime();
 
-        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), firstMount.c_str());
-        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), secondMount.c_str());
-        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), thirdMount.c_str());
-        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), fourthMount.c_str());
+        // g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), firstMount.c_str());
+        // g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), secondMount.c_str());
+        // g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), thirdMount.c_str());
+        // g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), fourthMount.c_str());
 
-        gst_rtsp_mount_points_add_factory(mounts, firstMount.c_str(), firstFactory);
-        mediaFactories[firstMount] = firstFactory;
-        gst_rtsp_mount_points_add_factory(mounts, secondMount.c_str(), secondFactory);
-        mediaFactories[secondMount] = secondFactory;
-        gst_rtsp_mount_points_add_factory(mounts, thirdMount.c_str(), thirdFactory);
-        mediaFactories[thirdMount] = thirdFactory;
-        gst_rtsp_mount_points_add_factory(mounts, fourthMount.c_str(), forthFactory);
-        mediaFactories[fourthMount] = forthFactory;
+        // gst_rtsp_mount_points_add_factory(mounts, firstMount.c_str(), firstFactory);
+        // mediaFactories[firstMount] = firstFactory;
+        // gst_rtsp_mount_points_add_factory(mounts, secondMount.c_str(), secondFactory);
+        // mediaFactories[secondMount] = secondFactory;
+        // gst_rtsp_mount_points_add_factory(mounts, thirdMount.c_str(), thirdFactory);
+        // mediaFactories[thirdMount] = thirdFactory;
+        // gst_rtsp_mount_points_add_factory(mounts, fourthMount.c_str(), forthFactory);
+        // mediaFactories[fourthMount] = forthFactory;
+        // g_object_unref(mounts);
+
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), uriParts.mount_points.uri_first.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), uriParts.mount_points.uri_second.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), uriParts.mount_points.uri_third.c_str());
+        g_print("[%s]RTSP mount points : %s\n", oss.str().c_str(), uriParts.mount_points.uri_fourth.c_str());
+
+        gst_rtsp_mount_points_add_factory(mounts, uriParts.mount_points.uri_first.c_str(), firstFactory);
+        mediaFactories[uriParts.mount_points.uri_first] = firstFactory;
+        gst_rtsp_mount_points_add_factory(mounts, uriParts.mount_points.uri_second.c_str(), secondFactory);
+        mediaFactories[uriParts.mount_points.uri_second] = secondFactory;
+        gst_rtsp_mount_points_add_factory(mounts, uriParts.mount_points.uri_third.c_str(), thirdFactory);
+        mediaFactories[uriParts.mount_points.uri_third] = thirdFactory;
+        gst_rtsp_mount_points_add_factory(mounts, uriParts.mount_points.uri_fourth.c_str(), forthFactory);
+        mediaFactories[uriParts.mount_points.uri_fourth] = forthFactory;
         g_object_unref(mounts);
+
+        uriPartsMap[uriParts.id] = uriParts;
 
         oss = getCurrentTime();
         g_print("[%s]Added RTSP stream: %s\n", oss.str().c_str(), uri.c_str());
@@ -277,10 +329,7 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
     try
     {
         std::lock_guard<std::recursive_mutex> lock(processMutex);
-        // Before Remove RTSP media factory, client session should be disconnected!
-        RemoveClientWithId(id);
 
-        //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         // Logic to remove an RTSP URI from the server
         // This function needs actual GStreamer RTSP server details to be implemented
         GstRTSPMountPoints* mounts = gst_rtsp_server_get_mount_points(Server);
@@ -289,38 +338,67 @@ bool TranscodingService::RemoveRtsp(const std::string& id) {
             return false;
         }
 
-        std::string firstMount = "/" + id + "/first";
-        std::string secondMount = "/" + id + "/second";
-        std::string thirdMount = "/" + id + "/third";
-        std::string fourthMount = "/" + id + "/fourth";
-
-        auto it = mediaFactories.find(firstMount);
-        if (it != mediaFactories.end()) {
-            std::cerr << "Mount point was removed :" << firstMount.c_str() << std::endl;
-            gst_rtsp_mount_points_remove_factory(mounts, firstMount.c_str());
-            mediaFactories.erase(it);
+        auto it = uriPartsMap.find(id);
+        if (it == uriPartsMap.end()) {
+            std::cerr << "No URI found for ID: " << id << std::endl;
+            return false;
         }
 
-        it = mediaFactories.find(secondMount);
-        if (it != mediaFactories.end()) {
-            std::cerr << "Mount point was removed :" << secondMount.c_str() << std::endl;
-            gst_rtsp_mount_points_remove_factory(mounts, secondMount.c_str());
-            mediaFactories.erase(it);
-        }
+        // Before Remove RTSP media factory, client session should be disconnected!
+        RemoveClientWithId(id);
+        
+        // std::string firstMount = "/" + id + "/first";
+        // std::string secondMount = "/" + id + "/second";
+        // std::string thirdMount = "/" + id + "/third";
+        // std::string fourthMount = "/" + id + "/fourth";
 
-        it = mediaFactories.find(thirdMount);
-        if (it != mediaFactories.end()) {
-            std::cerr << "Mount point was removed :" << thirdMount.c_str() << std::endl;
-            gst_rtsp_mount_points_remove_factory(mounts, thirdMount.c_str());
-            mediaFactories.erase(it);
-        }
+        // auto it = mediaFactories.find(firstMount);
+        // if (it != mediaFactories.end()) {
+        //     std::cerr << "Mount point was removed :" << firstMount.c_str() << std::endl;
+        //     gst_rtsp_mount_points_remove_factory(mounts, firstMount.c_str());
+        //     mediaFactories.erase(it);
+        // }
 
-        it = mediaFactories.find(fourthMount);
-        if (it != mediaFactories.end()) {
-            std::cerr << "Mount point was removed :" << fourthMount.c_str() << std::endl;
-            gst_rtsp_mount_points_remove_factory(mounts, fourthMount.c_str());
-            mediaFactories.erase(it);
-        }
+        // it = mediaFactories.find(secondMount);
+        // if (it != mediaFactories.end()) {
+        //     std::cerr << "Mount point was removed :" << secondMount.c_str() << std::endl;
+        //     gst_rtsp_mount_points_remove_factory(mounts, secondMount.c_str());
+        //     mediaFactories.erase(it);
+        // }
+
+        // it = mediaFactories.find(thirdMount);
+        // if (it != mediaFactories.end()) {
+        //     std::cerr << "Mount point was removed :" << thirdMount.c_str() << std::endl;
+        //     gst_rtsp_mount_points_remove_factory(mounts, thirdMount.c_str());
+        //     mediaFactories.erase(it);
+        // }
+
+        // it = mediaFactories.find(fourthMount);
+        // if (it != mediaFactories.end()) {
+        //     std::cerr << "Mount point was removed :" << fourthMount.c_str() << std::endl;
+        //     gst_rtsp_mount_points_remove_factory(mounts, fourthMount.c_str());
+        //     mediaFactories.erase(it);
+        // }
+
+        const UriParts& uriParts = it->second;
+
+        auto removeFactory = [&](const std::string& mount) {
+            auto it = mediaFactories.find(mount);
+            if (it != mediaFactories.end()) {
+                gst_rtsp_mount_points_remove_factory(mounts, mount.c_str());
+                mediaFactories.erase(it);
+                std::cerr << "Mount point was removed: " << mount.c_str() << std::endl;
+            }
+        };
+
+        removeFactory(uriParts.mount_points.uri_first);
+        removeFactory(uriParts.mount_points.uri_second);
+        removeFactory(uriParts.mount_points.uri_third);
+        removeFactory(uriParts.mount_points.uri_fourth);
+
+        uriPartsMap.erase(it);
+
+
         // 현재 시간 가져오기
         std::ostringstream oss = getCurrentTime();
         g_print("[%s]Removed RTSP stream: %s\n", oss.str().c_str(), id.c_str());
@@ -443,6 +521,7 @@ crow::json::wvalue TranscodingService::GetClientSessions() {
     std::lock_guard<std::recursive_mutex> lock(processMutex);
     crow::json::wvalue result;
     result["result"] = "SUCCESS";
+    result["message"] = "All sessions have been successfully retrieved.";
     result["count"] = static_cast<int>(clientInfos.size());
     crow::json::wvalue::list list;
     for (const auto& clientInfo : clientInfos) {
@@ -455,25 +534,59 @@ crow::json::wvalue TranscodingService::GetClientSessions() {
     return result;
 }
 
+// crow::json::wvalue TranscodingService::GetMedias() {
+//     std::lock_guard<std::recursive_mutex> lock(processMutex);
+//     std::unordered_map<std::string, std::vector<std::string>> groupedUris;
+//     for (const auto& pair : mediaFactories) {
+//         std::string key = pair.first.substr(0, pair.first.rfind('/'));
+//         groupedUris[key].push_back(pair.first);
+//     }
+
+//     crow::json::wvalue result;
+//     result["result"] = "SUCCESS";
+//     result["message"] = "All medias have been successfully retrieved.";
+//     result["count"] = static_cast<int>(groupedUris.size());
+//     crow::json::wvalue::list list;
+
+//     for (const auto& group : groupedUris) {
+//         crow::json::wvalue media_info;
+//         for (const auto& uri : group.second) {
+//             std::string suffix = uri.substr(uri.rfind('/') + 1);
+//             media_info["uri_" + suffix] = uri;
+//         }
+//         list.push_back(std::move(media_info));
+//     }
+
+//     result["list"] = std::move(list);
+//     return result;
+// }
+
 crow::json::wvalue TranscodingService::GetMedias() {
     std::lock_guard<std::recursive_mutex> lock(processMutex);
-    std::unordered_map<std::string, std::vector<std::string>> groupedUris;
-    for (const auto& pair : mediaFactories) {
-        std::string key = pair.first.substr(0, pair.first.rfind('/'));
-        groupedUris[key].push_back(pair.first);
-    }
-
     crow::json::wvalue result;
     result["result"] = "SUCCESS";
-    result["count"] = static_cast<int>(groupedUris.size());
+    result["message"] = "All medias have been successfully retrieved.";
+    result["count"] = static_cast<int>(uriPartsMap.size());
     crow::json::wvalue::list list;
 
-    for (const auto& group : groupedUris) {
+    for (const auto& pair : uriPartsMap) {
+        const UriParts& uriParts = pair.second;
         crow::json::wvalue media_info;
-        for (const auto& uri : group.second) {
-            std::string suffix = uri.substr(uri.rfind('/') + 1);
-            media_info["uri" + suffix] = uri;
-        }
+        media_info["id"] = uriParts.id;
+        media_info["user"] = uriParts.username;
+        media_info["pass"] = uriParts.password;
+        media_info["ip"] = uriParts.ip;
+        media_info["port"] = uriParts.port;
+        media_info["path"] = uriParts.path;
+        media_info["full_path"] = uriParts.full_path;
+
+        crow::json::wvalue mount_points;
+        mount_points["uri_first"] = uriParts.mount_points.uri_first;
+        mount_points["uri_second"] = uriParts.mount_points.uri_second;
+        mount_points["uri_third"] = uriParts.mount_points.uri_third;
+        mount_points["uri_fourth"] = uriParts.mount_points.uri_fourth;
+        media_info["mount_points"] = std::move(mount_points);
+
         list.push_back(std::move(media_info));
     }
 

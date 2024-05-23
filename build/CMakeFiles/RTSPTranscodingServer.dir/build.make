@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lsirikh/RTSPTranscodingServer
+CMAKE_SOURCE_DIR = /home/sensorway/Transcoding/TranscodingServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lsirikh/RTSPTranscodingServer/build
+CMAKE_BINARY_DIR = /home/sensorway/Transcoding/TranscodingServer/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RTSPTranscodingServer.dir/depend.make
@@ -72,72 +72,72 @@ include CMakeFiles/RTSPTranscodingServer.dir/flags.make
 CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/flags.make
 CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp
 CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o -c /home/lsirikh/RTSPTranscodingServer/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o -c /home/sensorway/Transcoding/TranscodingServer/main.cpp
 
 CMakeFiles/RTSPTranscodingServer.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTSPTranscodingServer.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lsirikh/RTSPTranscodingServer/main.cpp > CMakeFiles/RTSPTranscodingServer.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sensorway/Transcoding/TranscodingServer/main.cpp > CMakeFiles/RTSPTranscodingServer.dir/main.cpp.i
 
 CMakeFiles/RTSPTranscodingServer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTSPTranscodingServer.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lsirikh/RTSPTranscodingServer/main.cpp -o CMakeFiles/RTSPTranscodingServer.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sensorway/Transcoding/TranscodingServer/main.cpp -o CMakeFiles/RTSPTranscodingServer.dir/main.cpp.s
 
 CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/flags.make
 CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingService.cpp
 CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o -c /home/lsirikh/RTSPTranscodingServer/TranscodingService.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o -c /home/sensorway/Transcoding/TranscodingServer/TranscodingService.cpp
 
 CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lsirikh/RTSPTranscodingServer/TranscodingService.cpp > CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sensorway/Transcoding/TranscodingServer/TranscodingService.cpp > CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.i
 
 CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lsirikh/RTSPTranscodingServer/TranscodingService.cpp -o CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sensorway/Transcoding/TranscodingServer/TranscodingService.cpp -o CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.s
 
 CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/flags.make
 CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: ../UriParts.cpp
 CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o -c /home/lsirikh/RTSPTranscodingServer/UriParts.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o -c /home/sensorway/Transcoding/TranscodingServer/UriParts.cpp
 
 CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lsirikh/RTSPTranscodingServer/UriParts.cpp > CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sensorway/Transcoding/TranscodingServer/UriParts.cpp > CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.i
 
 CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lsirikh/RTSPTranscodingServer/UriParts.cpp -o CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sensorway/Transcoding/TranscodingServer/UriParts.cpp -o CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.s
 
 CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/flags.make
 CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: ../datetime.cpp
 CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o -c /home/lsirikh/RTSPTranscodingServer/datetime.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o -c /home/sensorway/Transcoding/TranscodingServer/datetime.cpp
 
 CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lsirikh/RTSPTranscodingServer/datetime.cpp > CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sensorway/Transcoding/TranscodingServer/datetime.cpp > CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.i
 
 CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lsirikh/RTSPTranscodingServer/datetime.cpp -o CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sensorway/Transcoding/TranscodingServer/datetime.cpp -o CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.s
 
 CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/flags.make
 CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp
 CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: CMakeFiles/RTSPTranscodingServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o -c /home/lsirikh/RTSPTranscodingServer/CustomLogger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o -MF CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o.d -o CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o -c /home/sensorway/Transcoding/TranscodingServer/CustomLogger.cpp
 
 CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lsirikh/RTSPTranscodingServer/CustomLogger.cpp > CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sensorway/Transcoding/TranscodingServer/CustomLogger.cpp > CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.i
 
 CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lsirikh/RTSPTranscodingServer/CustomLogger.cpp -o CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sensorway/Transcoding/TranscodingServer/CustomLogger.cpp -o CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.s
 
 # Object files for target RTSPTranscodingServer
 RTSPTranscodingServer_OBJECTS = \
@@ -157,7 +157,7 @@ RTSPTranscodingServer: CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o
 RTSPTranscodingServer: CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o
 RTSPTranscodingServer: CMakeFiles/RTSPTranscodingServer.dir/build.make
 RTSPTranscodingServer: CMakeFiles/RTSPTranscodingServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lsirikh/RTSPTranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable RTSPTranscodingServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable RTSPTranscodingServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RTSPTranscodingServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -169,6 +169,6 @@ CMakeFiles/RTSPTranscodingServer.dir/clean:
 .PHONY : CMakeFiles/RTSPTranscodingServer.dir/clean
 
 CMakeFiles/RTSPTranscodingServer.dir/depend:
-	cd /home/lsirikh/RTSPTranscodingServer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lsirikh/RTSPTranscodingServer /home/lsirikh/RTSPTranscodingServer /home/lsirikh/RTSPTranscodingServer/build /home/lsirikh/RTSPTranscodingServer/build /home/lsirikh/RTSPTranscodingServer/build/CMakeFiles/RTSPTranscodingServer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sensorway/Transcoding/TranscodingServer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sensorway/Transcoding/TranscodingServer /home/sensorway/Transcoding/TranscodingServer /home/sensorway/Transcoding/TranscodingServer/build /home/sensorway/Transcoding/TranscodingServer/build /home/sensorway/Transcoding/TranscodingServer/build/CMakeFiles/RTSPTranscodingServer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RTSPTranscodingServer.dir/depend
 

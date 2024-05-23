@@ -39,6 +39,7 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+  /usr/include/c++/11/pstl/pstl_config.h \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/char_traits.h \
@@ -126,6 +127,10 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/bits/alloc_traits.h \
   /usr/include/c++/11/bits/stl_construct.h \
+  /usr/include/c++/11/string_view \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/hash_bytes.h \
+  /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/cstdlib \
   /usr/include/stdlib.h \
@@ -151,8 +156,6 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/functional_hash.h \
-  /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
@@ -170,6 +173,7 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/iostream \
@@ -216,6 +220,8 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   ../headers/crow/http_parser_merged.h \
   /usr/include/assert.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
@@ -232,6 +238,10 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/c++/11/cstring \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_heap.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/random \
@@ -246,28 +256,50 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/limits \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
   /usr/include/c++/11/bits/random.h \
-  /usr/include/c++/11/bits/uniform_int_dist.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
   /usr/include/c++/11/bits/random.tcc \
   /usr/include/c++/11/numeric \
   /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
   /usr/include/c++/11/algorithm \
-  /usr/include/c++/11/bits/stl_algo.h \
-  /usr/include/c++/11/bits/algorithmfwd.h \
-  /usr/include/c++/11/bits/stl_heap.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   ../headers/crow/settings.h \
-  ../headers/crow/ci_map.h \
+  /usr/include/c++/11/filesystem \
+  /usr/include/c++/11/bits/fs_fwd.h \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/bits/parse_numbers.h \
+  /usr/include/c++/11/bits/fs_path.h \
   /usr/include/c++/11/locale \
   /usr/include/c++/11/bits/locale_facets_nonio.h \
-  /usr/include/c++/11/ctime \
   /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
   /usr/include/libintl.h \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/codecvt \
+  /usr/include/c++/11/bits/fs_dir.h \
+  /usr/include/c++/11/bits/fs_ops.h \
+  ../headers/crow/ci_map.h \
   ../headers/crow/TinySHA1.hpp \
   ../headers/crow/socket_adaptors.h \
   /usr/include/asio.hpp \
@@ -451,6 +483,7 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/asio/traits/bulk_execute_member.hpp \
   /usr/include/asio/traits/bulk_execute_free.hpp \
   /usr/include/asio/execution/context.hpp \
+  /usr/include/c++/11/any \
   /usr/include/asio/execution/context_as.hpp \
   /usr/include/asio/execution/mapping.hpp \
   /usr/include/asio/execution/occupancy.hpp \
@@ -553,9 +586,6 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/asio/detail/handler_cont_helpers.hpp \
   /usr/include/asio/handler_continuation_hook.hpp \
   /usr/include/asio/detail/chrono.hpp \
-  /usr/include/c++/11/chrono \
-  /usr/include/c++/11/ratio \
-  /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/asio/impl/io_context.hpp \
   /usr/include/asio/detail/completion_handler.hpp \
   /usr/include/asio/detail/handler_work.hpp \
@@ -571,10 +601,6 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   /usr/include/asio/buffer.hpp \
   /usr/include/asio/detail/array_fwd.hpp \
   /usr/include/asio/detail/string_view.hpp \
-  /usr/include/c++/11/experimental/string_view \
-  /usr/include/c++/11/bits/ranges_base.h \
-  /usr/include/c++/11/experimental/bits/lfts_config.h \
-  /usr/include/c++/11/experimental/bits/string_view.tcc \
   /usr/include/asio/detail/is_buffer_sequence.hpp \
   /usr/include/asio/detail/buffer_sequence_adapter.hpp \
   /usr/include/asio/detail/impl/buffer_sequence_adapter.ipp \
@@ -946,9 +972,7 @@ CMakeFiles/RTSPTranscodingServer.dir/CustomLogger.cpp.o: ../CustomLogger.cpp \
   ../headers/crow/version.h \
   ../headers/crow/app.h \
   /usr/include/c++/11/thread \
-  /usr/include/c++/11/bits/this_thread_sleep.h \
-  /usr/include/c++/11/iomanip \
-  /usr/include/c++/11/bits/quoted_string.h
+  /usr/include/c++/11/bits/this_thread_sleep.h
 
 CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingService.cpp \
   /usr/include/stdc-predef.h \
@@ -1008,6 +1032,7 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+  /usr/include/c++/11/pstl/pstl_config.h \
   /usr/include/glib-2.0/glib/gerror.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
   /usr/include/glib-2.0/glib/gquark.h \
@@ -1217,6 +1242,10 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/bits/alloc_traits.h \
   /usr/include/c++/11/bits/stl_construct.h \
+  /usr/include/c++/11/string_view \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/hash_bytes.h \
+  /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -1227,9 +1256,12 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/functional_hash.h \
-  /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/bits/parse_numbers.h \
   ../headers/TranscodingService.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -1260,9 +1292,9 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/gstreamer-1.0/gst/gst.h \
-  /usr/include/gstreamer-1.0/gst/glib-compat.h \
-  /usr/include/gstreamer-1.0/gst/gstenumtypes.h \
+  /usr/local/include/gstreamer-1.0/gst/gst.h \
+  /usr/local/include/gstreamer-1.0/gst/glib-compat.h \
+  /usr/local/include/gstreamer-1.0/gst/gstenumtypes.h \
   /usr/include/glib-2.0/glib-object.h \
   /usr/include/glib-2.0/gobject/gbinding.h \
   /usr/include/glib-2.0/gobject/gobject.h \
@@ -1285,94 +1317,96 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/glib-2.0/gobject/gvaluearray.h \
   /usr/include/glib-2.0/gobject/gvaluetypes.h \
   /usr/include/glib-2.0/gobject/gobject-autocleanups.h \
-  /usr/include/gstreamer-1.0/gst/gstconfig.h \
-  /usr/include/gstreamer-1.0/gst/gstversion.h \
-  /usr/include/gstreamer-1.0/gst/gstatomicqueue.h \
-  /usr/include/gstreamer-1.0/gst/gstbin.h \
-  /usr/include/gstreamer-1.0/gst/gstelement.h \
-  /usr/include/gstreamer-1.0/gst/gstobject.h \
-  /usr/include/gstreamer-1.0/gst/gstcontrolbinding.h \
-  /usr/include/gstreamer-1.0/gst/gstcontrolsource.h \
-  /usr/include/gstreamer-1.0/gst/gstclock.h \
-  /usr/include/gstreamer-1.0/gst/gstpad.h \
-  /usr/include/gstreamer-1.0/gst/gstbuffer.h \
-  /usr/include/gstreamer-1.0/gst/gstminiobject.h \
-  /usr/include/gstreamer-1.0/gst/gstallocator.h \
-  /usr/include/gstreamer-1.0/gst/gstmemory.h \
-  /usr/include/gstreamer-1.0/gst/gstcaps.h \
-  /usr/include/gstreamer-1.0/gst/gststructure.h \
-  /usr/include/gstreamer-1.0/gst/gstdatetime.h \
-  /usr/include/gstreamer-1.0/gst/gstcapsfeatures.h \
-  /usr/include/gstreamer-1.0/gst/gstmeta.h \
-  /usr/include/gstreamer-1.0/gst/gstbufferlist.h \
-  /usr/include/gstreamer-1.0/gst/gstpadtemplate.h \
-  /usr/include/gstreamer-1.0/gst/gstevent.h \
-  /usr/include/gstreamer-1.0/gst/gstformat.h \
-  /usr/include/gstreamer-1.0/gst/gstiterator.h \
-  /usr/include/gstreamer-1.0/gst/gsttaglist.h \
-  /usr/include/gstreamer-1.0/gst/gstsample.h \
-  /usr/include/gstreamer-1.0/gst/gstsegment.h \
-  /usr/include/gstreamer-1.0/gst/gstmessage.h \
-  /usr/include/gstreamer-1.0/gst/gstquery.h \
-  /usr/include/gstreamer-1.0/gst/gsttoc.h \
-  /usr/include/gstreamer-1.0/gst/gstcontext.h \
-  /usr/include/gstreamer-1.0/gst/gstdevice.h \
-  /usr/include/gstreamer-1.0/gst/gststreams.h \
-  /usr/include/gstreamer-1.0/gst/gststreamcollection.h \
-  /usr/include/gstreamer-1.0/gst/gsttask.h \
-  /usr/include/gstreamer-1.0/gst/gsttaskpool.h \
-  /usr/include/gstreamer-1.0/gst/gstbus.h \
-  /usr/include/gstreamer-1.0/gst/gstelementfactory.h \
-  /usr/include/gstreamer-1.0/gst/gstplugin.h \
-  /usr/include/gstreamer-1.0/gst/gstmacros.h \
-  /usr/include/gstreamer-1.0/gst/gstpluginfeature.h \
-  /usr/include/gstreamer-1.0/gst/gsturi.h \
-  /usr/include/gstreamer-1.0/gst/gstminiobject.h \
-  /usr/include/gstreamer-1.0/gst/gstbufferpool.h \
-  /usr/include/gstreamer-1.0/gst/gstchildproxy.h \
-  /usr/include/gstreamer-1.0/gst/gstdebugutils.h \
-  /usr/include/gstreamer-1.0/gst/gstdevicemonitor.h \
-  /usr/include/gstreamer-1.0/gst/gstdeviceprovider.h \
-  /usr/include/gstreamer-1.0/gst/gstdeviceproviderfactory.h \
-  /usr/include/gstreamer-1.0/gst/gstdynamictypefactory.h \
-  /usr/include/gstreamer-1.0/gst/gstelementmetadata.h \
-  /usr/include/gstreamer-1.0/gst/gsterror.h \
-  /usr/include/gstreamer-1.0/gst/gstghostpad.h \
-  /usr/include/gstreamer-1.0/gst/gstinfo.h \
-  /usr/include/gstreamer-1.0/gst/gstparamspecs.h \
-  /usr/include/gstreamer-1.0/gst/gstvalue.h \
-  /usr/include/gstreamer-1.0/gst/gstpipeline.h \
-  /usr/include/gstreamer-1.0/gst/gstpoll.h \
-  /usr/include/gstreamer-1.0/gst/gstpreset.h \
-  /usr/include/gstreamer-1.0/gst/gstprotection.h \
-  /usr/include/gstreamer-1.0/gst/gstregistry.h \
-  /usr/include/gstreamer-1.0/gst/gstpromise.h \
-  /usr/include/gstreamer-1.0/gst/gstsystemclock.h \
-  /usr/include/gstreamer-1.0/gst/gsttagsetter.h \
-  /usr/include/gstreamer-1.0/gst/gsttocsetter.h \
-  /usr/include/gstreamer-1.0/gst/gsttracer.h \
-  /usr/include/gstreamer-1.0/gst/gsttracerfactory.h \
-  /usr/include/gstreamer-1.0/gst/gsttracerrecord.h \
-  /usr/include/gstreamer-1.0/gst/gsttypefind.h \
-  /usr/include/gstreamer-1.0/gst/gsttypefindfactory.h \
-  /usr/include/gstreamer-1.0/gst/gstutils.h \
-  /usr/include/gstreamer-1.0/gst/gstparse.h \
-  /usr/include/gstreamer-1.0/gst/gstcompat.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-prelude.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-object.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-pool.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsptransport.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspdefs.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/rtsp-prelude.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsp-enumtypes.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/rtsp.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsp.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspconnection.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspurl.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspmessage.h \
+  /usr/local/include/gstreamer-1.0/gst/gstconfig.h \
+  /usr/local/include/gstreamer-1.0/gst/gstversion.h \
+  /usr/local/include/gstreamer-1.0/gst/gstatomicqueue.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbin.h \
+  /usr/local/include/gstreamer-1.0/gst/gstelement.h \
+  /usr/local/include/gstreamer-1.0/gst/gstobject.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcontrolbinding.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcontrolsource.h \
+  /usr/local/include/gstreamer-1.0/gst/gstclock.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpad.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbuffer.h \
+  /usr/local/include/gstreamer-1.0/gst/gstminiobject.h \
+  /usr/local/include/gstreamer-1.0/gst/gstallocator.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmemory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcaps.h \
+  /usr/local/include/gstreamer-1.0/gst/gststructure.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdatetime.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcapsfeatures.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmeta.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbytearrayinterface.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbufferlist.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpadtemplate.h \
+  /usr/local/include/gstreamer-1.0/gst/gstevent.h \
+  /usr/local/include/gstreamer-1.0/gst/gstformat.h \
+  /usr/local/include/gstreamer-1.0/gst/gstiterator.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttaglist.h \
+  /usr/local/include/gstreamer-1.0/gst/gstsample.h \
+  /usr/local/include/gstreamer-1.0/gst/gstsegment.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmessage.h \
+  /usr/local/include/gstreamer-1.0/gst/gstquery.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttoc.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcontext.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdevice.h \
+  /usr/local/include/gstreamer-1.0/gst/gststreams.h \
+  /usr/local/include/gstreamer-1.0/gst/gststreamcollection.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttask.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttaskpool.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbus.h \
+  /usr/local/include/gstreamer-1.0/gst/gstelementfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstplugin.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmacros.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpluginfeature.h \
+  /usr/local/include/gstreamer-1.0/gst/gsturi.h \
+  /usr/local/include/gstreamer-1.0/gst/gstminiobject.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbufferpool.h \
+  /usr/local/include/gstreamer-1.0/gst/gstchildproxy.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdebugutils.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdevicemonitor.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdeviceprovider.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdeviceproviderfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdynamictypefactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstelementmetadata.h \
+  /usr/local/include/gstreamer-1.0/gst/gsterror.h \
+  /usr/local/include/gstreamer-1.0/gst/gstghostpad.h \
+  /usr/local/include/gstreamer-1.0/gst/gstinfo.h \
+  /usr/local/include/gstreamer-1.0/gst/gstparamspecs.h \
+  /usr/local/include/gstreamer-1.0/gst/gstvalue.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpipeline.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpoll.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpreset.h \
+  /usr/local/include/gstreamer-1.0/gst/gstprotection.h \
+  /usr/local/include/gstreamer-1.0/gst/gstregistry.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpromise.h \
+  /usr/local/include/gstreamer-1.0/gst/gstsystemclock.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttagsetter.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttocsetter.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttracer.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttracerfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttracerrecord.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttypefind.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttypefindfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstutils.h \
+  /usr/local/include/gstreamer-1.0/gst/gstparse.h \
+  /usr/local/include/gstreamer-1.0/gst/gstvecdeque.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcompat.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-object.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-pool.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsptransport.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspdefs.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/rtsp-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsp-enumtypes.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/rtsp.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsp.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspconnection.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspurl.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspmessage.h \
   /usr/include/glib-2.0/gio/gio.h \
   /usr/include/glib-2.0/gio/giotypes.h \
   /usr/include/glib-2.0/gio/gioenums.h \
@@ -1528,59 +1562,59 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/glib-2.0/gio/gzlibcompressor.h \
   /usr/include/glib-2.0/gio/gzlibdecompressor.h \
   /usr/include/glib-2.0/gio/gio-autocleanups.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspextension.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstsdpmessage.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstmikey.h \
-  /usr/include/gstreamer-1.0/gst/sdp/sdp-prelude.h \
-  /usr/include/gstreamer-1.0/gst/sdp/sdp.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstsdp.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstmikey.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsprange.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnet.h \
-  /usr/include/gstreamer-1.0/gst/net/net-prelude.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnetaddressmeta.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnetclientclock.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnettimepacket.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnettimeprovider.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream-transport.h \
-  /usr/include/gstreamer-1.0/gst/base/base.h \
-  /usr/include/gstreamer-1.0/gst/base/base-prelude.h \
-  /usr/include/gstreamer-1.0/gst/base/gstadapter.h \
-  /usr/include/gstreamer-1.0/gst/base/gstaggregator.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbaseparse.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbasesink.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbasesrc.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbasetransform.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbitreader.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbitwriter.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbytereader.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbytewriter.h \
-  /usr/include/gstreamer-1.0/gst/base/gstcollectpads.h \
-  /usr/include/gstreamer-1.0/gst/base/gstdataqueue.h \
-  /usr/include/gstreamer-1.0/gst/base/gstflowcombiner.h \
-  /usr/include/gstreamer-1.0/gst/base/gstpushsrc.h \
-  /usr/include/gstreamer-1.0/gst/base/gstqueuearray.h \
-  /usr/include/gstreamer-1.0/gst/base/gsttypefindhelper.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-address-pool.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-thread-pool.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-context.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-permissions.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-media.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-auth.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-token.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-mount-points.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-sdp.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory-uri.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-params.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-client.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media-factory.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-server.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspextension.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstsdpmessage.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstmikey.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/sdp-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/sdp.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstsdp.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstmikey.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsprange.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnet.h \
+  /usr/local/include/gstreamer-1.0/gst/net/net-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnetaddressmeta.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnetclientclock.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnettimepacket.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnettimeprovider.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream-transport.h \
+  /usr/local/include/gstreamer-1.0/gst/base/base.h \
+  /usr/local/include/gstreamer-1.0/gst/base/base-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstadapter.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstaggregator.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbaseparse.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbasesink.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbasesrc.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbasetransform.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbitreader.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbitwriter.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbytereader.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbytewriter.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstcollectpads.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstdataqueue.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstflowcombiner.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstpushsrc.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstqueuearray.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gsttypefindhelper.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-address-pool.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-thread-pool.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-context.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-permissions.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-media.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-auth.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-token.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-mount-points.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-sdp.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory-uri.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-params.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-client.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media-factory.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-server.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
   /usr/include/c++/11/thread \
   /usr/include/c++/11/bits/std_thread.h \
   /usr/include/c++/11/tuple \
@@ -1592,11 +1626,6 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/bits/refwrap.h \
   /usr/include/c++/11/bits/unique_ptr.h \
   /usr/include/c++/11/bits/this_thread_sleep.h \
-  /usr/include/c++/11/chrono \
-  /usr/include/c++/11/ratio \
-  /usr/include/c++/11/limits \
-  /usr/include/c++/11/ctime \
-  /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/list \
   /usr/include/c++/11/bits/stl_list.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -1618,10 +1647,13 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
   ../headers/crow/json.h \
@@ -1630,6 +1662,9 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
@@ -1645,11 +1680,22 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
   /usr/include/c++/11/cfloat \
   ../headers/crow/utility.h \
   /usr/include/c++/11/cstring \
-  /usr/include/c++/11/functional \
-  /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/random \
@@ -1658,13 +1704,11 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/bits/random.tcc \
   /usr/include/c++/11/numeric \
   /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
   ../headers/crow/settings.h \
-  ../headers/crow/returnable.h \
-  ../headers/crow/logging.h \
-  /usr/include/c++/11/regex \
-  /usr/include/c++/11/bitset \
-  /usr/include/c++/11/iterator \
-  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/filesystem \
+  /usr/include/c++/11/bits/fs_fwd.h \
+  /usr/include/c++/11/bits/fs_path.h \
   /usr/include/c++/11/locale \
   /usr/include/c++/11/bits/locale_facets_nonio.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
@@ -1673,6 +1717,17 @@ CMakeFiles/RTSPTranscodingServer.dir/TranscodingService.cpp.o: ../TranscodingSer
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/codecvt \
+  /usr/include/c++/11/bits/fs_dir.h \
+  /usr/include/c++/11/bits/fs_ops.h \
+  ../headers/crow/returnable.h \
+  ../headers/crow/logging.h \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
   /usr/include/c++/11/stack \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
@@ -1711,6 +1766,7 @@ CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: ../UriParts.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+  /usr/include/c++/11/pstl/pstl_config.h \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/char_traits.h \
@@ -1811,6 +1867,10 @@ CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: ../UriParts.cpp \
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/bits/alloc_traits.h \
   /usr/include/c++/11/bits/stl_construct.h \
+  /usr/include/c++/11/string_view \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/hash_bytes.h \
+  /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/cstdlib \
   /usr/include/stdlib.h \
@@ -1842,9 +1902,12 @@ CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: ../UriParts.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/functional_hash.h \
-  /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/ios \
@@ -1879,7 +1942,41 @@ CMakeFiles/RTSPTranscodingServer.dir/UriParts.cpp.o: ../UriParts.cpp \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/random \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  /usr/include/c++/11/bits/random.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+  /usr/include/c++/11/bits/random.tcc \
+  /usr/include/c++/11/numeric \
+  /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h
 
 CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: ../datetime.cpp \
   /usr/include/stdc-predef.h \
@@ -1899,6 +1996,7 @@ CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: ../datetime.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+  /usr/include/c++/11/pstl/pstl_config.h \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -2007,6 +2105,9 @@ CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: ../datetime.cpp \
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/bits/alloc_traits.h \
   /usr/include/c++/11/bits/stl_construct.h \
+  /usr/include/c++/11/string_view \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/cstdlib \
   /usr/include/stdlib.h \
@@ -2038,7 +2139,6 @@ CMakeFiles/RTSPTranscodingServer.dir/datetime.cpp.o: ../datetime.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/locale_classes.tcc \
   /usr/include/c++/11/system_error \
@@ -2099,6 +2199,7 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+  /usr/include/c++/11/pstl/pstl_config.h \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
   /usr/include/c++/11/iosfwd \
@@ -2210,6 +2311,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/bits/alloc_traits.h \
   /usr/include/c++/11/bits/stl_construct.h \
+  /usr/include/c++/11/string_view \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/cstdlib \
   /usr/include/stdlib.h \
@@ -2241,7 +2345,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/locale_classes.tcc \
   /usr/include/c++/11/system_error \
@@ -2262,7 +2365,7 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/gstreamer-1.0/gst/gst.h \
+  /usr/local/include/gstreamer-1.0/gst/gst.h \
   /usr/include/glib-2.0/glib.h \
   /usr/include/glib-2.0/glib/galloca.h \
   /usr/include/glib-2.0/glib/gtypes.h \
@@ -2394,8 +2497,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/glib-2.0/glib/deprecated/grel.h \
   /usr/include/glib-2.0/glib/deprecated/gthread.h \
   /usr/include/glib-2.0/glib/glib-autocleanups.h \
-  /usr/include/gstreamer-1.0/gst/glib-compat.h \
-  /usr/include/gstreamer-1.0/gst/gstenumtypes.h \
+  /usr/local/include/gstreamer-1.0/gst/glib-compat.h \
+  /usr/local/include/gstreamer-1.0/gst/gstenumtypes.h \
   /usr/include/glib-2.0/glib-object.h \
   /usr/include/glib-2.0/gobject/gbinding.h \
   /usr/include/glib-2.0/gobject/gobject.h \
@@ -2418,94 +2521,96 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/glib-2.0/gobject/gvaluearray.h \
   /usr/include/glib-2.0/gobject/gvaluetypes.h \
   /usr/include/glib-2.0/gobject/gobject-autocleanups.h \
-  /usr/include/gstreamer-1.0/gst/gstconfig.h \
-  /usr/include/gstreamer-1.0/gst/gstversion.h \
-  /usr/include/gstreamer-1.0/gst/gstatomicqueue.h \
-  /usr/include/gstreamer-1.0/gst/gstbin.h \
-  /usr/include/gstreamer-1.0/gst/gstelement.h \
-  /usr/include/gstreamer-1.0/gst/gstobject.h \
-  /usr/include/gstreamer-1.0/gst/gstcontrolbinding.h \
-  /usr/include/gstreamer-1.0/gst/gstcontrolsource.h \
-  /usr/include/gstreamer-1.0/gst/gstclock.h \
-  /usr/include/gstreamer-1.0/gst/gstpad.h \
-  /usr/include/gstreamer-1.0/gst/gstbuffer.h \
-  /usr/include/gstreamer-1.0/gst/gstminiobject.h \
-  /usr/include/gstreamer-1.0/gst/gstallocator.h \
-  /usr/include/gstreamer-1.0/gst/gstmemory.h \
-  /usr/include/gstreamer-1.0/gst/gstcaps.h \
-  /usr/include/gstreamer-1.0/gst/gststructure.h \
-  /usr/include/gstreamer-1.0/gst/gstdatetime.h \
-  /usr/include/gstreamer-1.0/gst/gstcapsfeatures.h \
-  /usr/include/gstreamer-1.0/gst/gstmeta.h \
-  /usr/include/gstreamer-1.0/gst/gstbufferlist.h \
-  /usr/include/gstreamer-1.0/gst/gstpadtemplate.h \
-  /usr/include/gstreamer-1.0/gst/gstevent.h \
-  /usr/include/gstreamer-1.0/gst/gstformat.h \
-  /usr/include/gstreamer-1.0/gst/gstiterator.h \
-  /usr/include/gstreamer-1.0/gst/gsttaglist.h \
-  /usr/include/gstreamer-1.0/gst/gstsample.h \
-  /usr/include/gstreamer-1.0/gst/gstsegment.h \
-  /usr/include/gstreamer-1.0/gst/gstmessage.h \
-  /usr/include/gstreamer-1.0/gst/gstquery.h \
-  /usr/include/gstreamer-1.0/gst/gsttoc.h \
-  /usr/include/gstreamer-1.0/gst/gstcontext.h \
-  /usr/include/gstreamer-1.0/gst/gstdevice.h \
-  /usr/include/gstreamer-1.0/gst/gststreams.h \
-  /usr/include/gstreamer-1.0/gst/gststreamcollection.h \
-  /usr/include/gstreamer-1.0/gst/gsttask.h \
-  /usr/include/gstreamer-1.0/gst/gsttaskpool.h \
-  /usr/include/gstreamer-1.0/gst/gstbus.h \
-  /usr/include/gstreamer-1.0/gst/gstelementfactory.h \
-  /usr/include/gstreamer-1.0/gst/gstplugin.h \
-  /usr/include/gstreamer-1.0/gst/gstmacros.h \
-  /usr/include/gstreamer-1.0/gst/gstpluginfeature.h \
-  /usr/include/gstreamer-1.0/gst/gsturi.h \
-  /usr/include/gstreamer-1.0/gst/gstminiobject.h \
-  /usr/include/gstreamer-1.0/gst/gstbufferpool.h \
-  /usr/include/gstreamer-1.0/gst/gstchildproxy.h \
-  /usr/include/gstreamer-1.0/gst/gstdebugutils.h \
-  /usr/include/gstreamer-1.0/gst/gstdevicemonitor.h \
-  /usr/include/gstreamer-1.0/gst/gstdeviceprovider.h \
-  /usr/include/gstreamer-1.0/gst/gstdeviceproviderfactory.h \
-  /usr/include/gstreamer-1.0/gst/gstdynamictypefactory.h \
-  /usr/include/gstreamer-1.0/gst/gstelementmetadata.h \
-  /usr/include/gstreamer-1.0/gst/gsterror.h \
-  /usr/include/gstreamer-1.0/gst/gstghostpad.h \
-  /usr/include/gstreamer-1.0/gst/gstinfo.h \
-  /usr/include/gstreamer-1.0/gst/gstparamspecs.h \
-  /usr/include/gstreamer-1.0/gst/gstvalue.h \
-  /usr/include/gstreamer-1.0/gst/gstpipeline.h \
-  /usr/include/gstreamer-1.0/gst/gstpoll.h \
-  /usr/include/gstreamer-1.0/gst/gstpreset.h \
-  /usr/include/gstreamer-1.0/gst/gstprotection.h \
-  /usr/include/gstreamer-1.0/gst/gstregistry.h \
-  /usr/include/gstreamer-1.0/gst/gstpromise.h \
-  /usr/include/gstreamer-1.0/gst/gstsystemclock.h \
-  /usr/include/gstreamer-1.0/gst/gsttagsetter.h \
-  /usr/include/gstreamer-1.0/gst/gsttocsetter.h \
-  /usr/include/gstreamer-1.0/gst/gsttracer.h \
-  /usr/include/gstreamer-1.0/gst/gsttracerfactory.h \
-  /usr/include/gstreamer-1.0/gst/gsttracerrecord.h \
-  /usr/include/gstreamer-1.0/gst/gsttypefind.h \
-  /usr/include/gstreamer-1.0/gst/gsttypefindfactory.h \
-  /usr/include/gstreamer-1.0/gst/gstutils.h \
-  /usr/include/gstreamer-1.0/gst/gstparse.h \
-  /usr/include/gstreamer-1.0/gst/gstcompat.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-prelude.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-object.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-pool.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsptransport.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspdefs.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/rtsp-prelude.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsp-enumtypes.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/rtsp.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsp.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspconnection.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspurl.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspmessage.h \
+  /usr/local/include/gstreamer-1.0/gst/gstconfig.h \
+  /usr/local/include/gstreamer-1.0/gst/gstversion.h \
+  /usr/local/include/gstreamer-1.0/gst/gstatomicqueue.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbin.h \
+  /usr/local/include/gstreamer-1.0/gst/gstelement.h \
+  /usr/local/include/gstreamer-1.0/gst/gstobject.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcontrolbinding.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcontrolsource.h \
+  /usr/local/include/gstreamer-1.0/gst/gstclock.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpad.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbuffer.h \
+  /usr/local/include/gstreamer-1.0/gst/gstminiobject.h \
+  /usr/local/include/gstreamer-1.0/gst/gstallocator.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmemory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcaps.h \
+  /usr/local/include/gstreamer-1.0/gst/gststructure.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdatetime.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcapsfeatures.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmeta.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbytearrayinterface.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbufferlist.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpadtemplate.h \
+  /usr/local/include/gstreamer-1.0/gst/gstevent.h \
+  /usr/local/include/gstreamer-1.0/gst/gstformat.h \
+  /usr/local/include/gstreamer-1.0/gst/gstiterator.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttaglist.h \
+  /usr/local/include/gstreamer-1.0/gst/gstsample.h \
+  /usr/local/include/gstreamer-1.0/gst/gstsegment.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmessage.h \
+  /usr/local/include/gstreamer-1.0/gst/gstquery.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttoc.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcontext.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdevice.h \
+  /usr/local/include/gstreamer-1.0/gst/gststreams.h \
+  /usr/local/include/gstreamer-1.0/gst/gststreamcollection.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttask.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttaskpool.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbus.h \
+  /usr/local/include/gstreamer-1.0/gst/gstelementfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstplugin.h \
+  /usr/local/include/gstreamer-1.0/gst/gstmacros.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpluginfeature.h \
+  /usr/local/include/gstreamer-1.0/gst/gsturi.h \
+  /usr/local/include/gstreamer-1.0/gst/gstminiobject.h \
+  /usr/local/include/gstreamer-1.0/gst/gstbufferpool.h \
+  /usr/local/include/gstreamer-1.0/gst/gstchildproxy.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdebugutils.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdevicemonitor.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdeviceprovider.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdeviceproviderfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstdynamictypefactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstelementmetadata.h \
+  /usr/local/include/gstreamer-1.0/gst/gsterror.h \
+  /usr/local/include/gstreamer-1.0/gst/gstghostpad.h \
+  /usr/local/include/gstreamer-1.0/gst/gstinfo.h \
+  /usr/local/include/gstreamer-1.0/gst/gstparamspecs.h \
+  /usr/local/include/gstreamer-1.0/gst/gstvalue.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpipeline.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpoll.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpreset.h \
+  /usr/local/include/gstreamer-1.0/gst/gstprotection.h \
+  /usr/local/include/gstreamer-1.0/gst/gstregistry.h \
+  /usr/local/include/gstreamer-1.0/gst/gstpromise.h \
+  /usr/local/include/gstreamer-1.0/gst/gstsystemclock.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttagsetter.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttocsetter.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttracer.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttracerfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttracerrecord.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttypefind.h \
+  /usr/local/include/gstreamer-1.0/gst/gsttypefindfactory.h \
+  /usr/local/include/gstreamer-1.0/gst/gstutils.h \
+  /usr/local/include/gstreamer-1.0/gst/gstparse.h \
+  /usr/local/include/gstreamer-1.0/gst/gstvecdeque.h \
+  /usr/local/include/gstreamer-1.0/gst/gstcompat.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-object.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-pool.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsptransport.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspdefs.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/rtsp-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsp-enumtypes.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/rtsp.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsp.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspconnection.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspurl.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspmessage.h \
   /usr/include/glib-2.0/gio/gio.h \
   /usr/include/glib-2.0/gio/giotypes.h \
   /usr/include/glib-2.0/gio/gioenums.h \
@@ -2661,59 +2766,59 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/glib-2.0/gio/gzlibcompressor.h \
   /usr/include/glib-2.0/gio/gzlibdecompressor.h \
   /usr/include/glib-2.0/gio/gio-autocleanups.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtspextension.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstsdpmessage.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstmikey.h \
-  /usr/include/gstreamer-1.0/gst/sdp/sdp-prelude.h \
-  /usr/include/gstreamer-1.0/gst/sdp/sdp.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstsdp.h \
-  /usr/include/gstreamer-1.0/gst/sdp/gstmikey.h \
-  /usr/include/gstreamer-1.0/gst/rtsp/gstrtsprange.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnet.h \
-  /usr/include/gstreamer-1.0/gst/net/net-prelude.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnetaddressmeta.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnetclientclock.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnettimepacket.h \
-  /usr/include/gstreamer-1.0/gst/net/gstnettimeprovider.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream-transport.h \
-  /usr/include/gstreamer-1.0/gst/base/base.h \
-  /usr/include/gstreamer-1.0/gst/base/base-prelude.h \
-  /usr/include/gstreamer-1.0/gst/base/gstadapter.h \
-  /usr/include/gstreamer-1.0/gst/base/gstaggregator.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbaseparse.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbasesink.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbasesrc.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbasetransform.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbitreader.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbitwriter.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbytereader.h \
-  /usr/include/gstreamer-1.0/gst/base/gstbytewriter.h \
-  /usr/include/gstreamer-1.0/gst/base/gstcollectpads.h \
-  /usr/include/gstreamer-1.0/gst/base/gstdataqueue.h \
-  /usr/include/gstreamer-1.0/gst/base/gstflowcombiner.h \
-  /usr/include/gstreamer-1.0/gst/base/gstpushsrc.h \
-  /usr/include/gstreamer-1.0/gst/base/gstqueuearray.h \
-  /usr/include/gstreamer-1.0/gst/base/gsttypefindhelper.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-address-pool.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-thread-pool.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-context.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-permissions.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-media.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-auth.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-token.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-mount-points.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-sdp.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory-uri.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-params.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-client.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media-factory.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-server.h \
-  /usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspextension.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstsdpmessage.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstmikey.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/sdp-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/sdp.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstsdp.h \
+  /usr/local/include/gstreamer-1.0/gst/sdp/gstmikey.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsprange.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnet.h \
+  /usr/local/include/gstreamer-1.0/gst/net/net-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnetaddressmeta.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnetclientclock.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnettimepacket.h \
+  /usr/local/include/gstreamer-1.0/gst/net/gstnettimeprovider.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream-transport.h \
+  /usr/local/include/gstreamer-1.0/gst/base/base.h \
+  /usr/local/include/gstreamer-1.0/gst/base/base-prelude.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstadapter.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstaggregator.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbaseparse.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbasesink.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbasesrc.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbasetransform.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbitreader.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbitwriter.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbytereader.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstbytewriter.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstcollectpads.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstdataqueue.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstflowcombiner.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstpushsrc.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gstqueuearray.h \
+  /usr/local/include/gstreamer-1.0/gst/base/gsttypefindhelper.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-address-pool.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-thread-pool.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-context.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-permissions.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-media.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-auth.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-token.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-mount-points.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-sdp.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory-uri.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-params.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-client.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media-factory.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-server.h \
+  /usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h \
   /usr/include/c++/11/thread \
   /usr/include/c++/11/bits/std_thread.h \
   /usr/include/c++/11/tuple \
@@ -2751,10 +2856,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
   ../headers/crow/json.h \
@@ -2763,6 +2871,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
@@ -2778,11 +2889,22 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
   /usr/include/c++/11/cfloat \
   ../headers/crow/utility.h \
   /usr/include/c++/11/cstring \
-  /usr/include/c++/11/functional \
-  /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/random \
@@ -2791,13 +2913,11 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/random.tcc \
   /usr/include/c++/11/numeric \
   /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
   ../headers/crow/settings.h \
-  ../headers/crow/returnable.h \
-  ../headers/crow/logging.h \
-  /usr/include/c++/11/regex \
-  /usr/include/c++/11/bitset \
-  /usr/include/c++/11/iterator \
-  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/filesystem \
+  /usr/include/c++/11/bits/fs_fwd.h \
+  /usr/include/c++/11/bits/fs_path.h \
   /usr/include/c++/11/locale \
   /usr/include/c++/11/bits/locale_facets_nonio.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
@@ -2806,6 +2926,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/codecvt \
+  /usr/include/c++/11/bits/fs_dir.h \
+  /usr/include/c++/11/bits/fs_ops.h \
+  ../headers/crow/returnable.h \
+  ../headers/crow/logging.h \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
   /usr/include/c++/11/stack \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
@@ -2827,6 +2958,7 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/regex.tcc \
   /usr/include/c++/11/bits/regex_executor.h \
   /usr/include/c++/11/bits/regex_executor.tcc \
+  ../headers/UriParts.h \
   ../headers/crow.h \
   ../headers/crow/query_string.h \
   ../headers/crow/http_parser_merged.h \
@@ -3006,6 +3138,7 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/asio/traits/bulk_execute_member.hpp \
   /usr/include/asio/traits/bulk_execute_free.hpp \
   /usr/include/asio/execution/context.hpp \
+  /usr/include/c++/11/any \
   /usr/include/asio/execution/context_as.hpp \
   /usr/include/asio/execution/mapping.hpp \
   /usr/include/asio/execution/occupancy.hpp \
@@ -3103,10 +3236,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   /usr/include/asio/buffer.hpp \
   /usr/include/asio/detail/array_fwd.hpp \
   /usr/include/asio/detail/string_view.hpp \
-  /usr/include/c++/11/experimental/string_view \
-  /usr/include/c++/11/bits/ranges_base.h \
-  /usr/include/c++/11/experimental/bits/lfts_config.h \
-  /usr/include/c++/11/experimental/bits/string_view.tcc \
   /usr/include/asio/detail/is_buffer_sequence.hpp \
   /usr/include/asio/detail/buffer_sequence_adapter.hpp \
   /usr/include/asio/detail/impl/buffer_sequence_adapter.ipp \
@@ -3463,12 +3592,12 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
   ../headers/crow/version.h \
   ../headers/crow/app.h \
   ../headers/datetime.h \
-  ../headers/CustomLogger.h \
-  /usr/include/c++/11/iomanip \
-  /usr/include/c++/11/bits/quoted_string.h
+  ../headers/CustomLogger.h
 
 
 ../main.cpp:
+
+../datetime.cpp:
 
 ../UriParts.cpp:
 
@@ -3494,97 +3623,65 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/stack:
 
-/usr/include/c++/11/bits/list.tcc:
+/usr/include/c++/11/bitset:
 
 /usr/include/c++/11/bits/stl_list.h:
 
 /usr/include/c++/11/list:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-server.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media-factory.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory-uri.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-client.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-sdp.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory-uri.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-mount-points.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-token.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-context.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-auth.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-media.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-address-pool.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-client.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstdataqueue.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-thread-pool.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstbytewriter.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-address-pool.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstbytereader.h:
 
-/usr/include/gstreamer-1.0/gst/base/gsttypefindhelper.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstbitwriter.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstpushsrc.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstbasetransform.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstflowcombiner.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstbasesink.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstdataqueue.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstadapter.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstcollectpads.h:
+/usr/local/include/gstreamer-1.0/gst/base/base-prelude.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstbytewriter.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-mount-points.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstbytereader.h:
+/usr/local/include/gstreamer-1.0/gst/base/base.h:
 
-/usr/include/c++/11/bitset:
+/usr/local/include/gstreamer-1.0/gst/net/gstnettimeprovider.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstbitreader.h:
+/usr/local/include/gstreamer-1.0/gst/net/gstnettimepacket.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstbasetransform.h:
+/usr/local/include/gstreamer-1.0/gst/sdp/sdp-prelude.h:
 
-/usr/include/gstreamer-1.0/gst/base/gstbasesrc.h:
-
-/usr/include/gstreamer-1.0/gst/base/gstbasesink.h:
-
-/usr/include/gstreamer-1.0/gst/base/gstbaseparse.h:
-
-/usr/include/gstreamer-1.0/gst/base/gstaggregator.h:
-
-/usr/include/gstreamer-1.0/gst/base/base-prelude.h:
-
-/usr/include/gstreamer-1.0/gst/base/base.h:
-
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream-transport.h:
-
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream.h:
-
-/usr/include/gstreamer-1.0/gst/net/gstnettimeprovider.h:
-
-/usr/include/gstreamer-1.0/gst/net/gstnettimepacket.h:
-
-/usr/include/gstreamer-1.0/gst/net/gstnetclientclock.h:
-
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-media-factory.h:
-
-/usr/include/gstreamer-1.0/gst/net/gstnetaddressmeta.h:
-
-/usr/include/gstreamer-1.0/gst/net/net-prelude.h:
-
-/usr/include/gstreamer-1.0/gst/sdp/gstsdp.h:
-
-/usr/include/gstreamer-1.0/gst/sdp/sdp-prelude.h:
-
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtspextension.h:
+/usr/local/include/gstreamer-1.0/gst/sdp/gstsdpmessage.h:
 
 /usr/include/glib-2.0/gio/gio-autocleanups.h:
-
-/usr/include/gstreamer-1.0/gst/sdp/gstmikey.h:
 
 /usr/include/glib-2.0/gio/gzlibdecompressor.h:
 
 /usr/include/glib-2.0/gio/gvolume.h:
 
 /usr/include/glib-2.0/gio/gvfs.h:
+
+/usr/include/glib-2.0/gio/gtlsserverconnection.h:
 
 /usr/include/glib-2.0/gio/gtlspassword.h:
 
@@ -3606,9 +3703,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/gsocketservice.h:
 
+/usr/include/glib-2.0/gio/gsocketcontrolmessage.h:
+
 /usr/include/glib-2.0/gio/gsocketconnection.h:
 
 /usr/include/glib-2.0/gio/gsocketclient.h:
+
+/usr/include/glib-2.0/gio/gsocket.h:
 
 /usr/include/glib-2.0/gio/gsimpleproxyresolver.h:
 
@@ -3619,6 +3720,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/gio/gseekable.h:
 
 /usr/include/glib-2.0/gio/gresource.h:
+
+/usr/include/glib-2.0/gio/gresolver.h:
 
 /usr/include/glib-2.0/gio/gremoteactiongroup.h:
 
@@ -3642,19 +3745,21 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/gnetworkaddress.h:
 
-/usr/include/glib-2.0/gio/gvolumemonitor.h:
-
 /usr/include/glib-2.0/gio/gnativevolumemonitor.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-auth.h:
 
 /usr/include/glib-2.0/gio/gnativesocketaddress.h:
 
-/usr/include/glib-2.0/gio/gmountoperation.h:
-
 /usr/include/glib-2.0/gio/gmount.h:
+
+/usr/include/glib-2.0/gio/gmenu.h:
 
 /usr/include/glib-2.0/gio/gmemoryoutputstream.h:
 
 /usr/include/glib-2.0/gio/gmemoryinputstream.h:
+
+/usr/include/glib-2.0/gio/gliststore.h:
 
 /usr/include/glib-2.0/gio/glistmodel.h:
 
@@ -3666,45 +3771,49 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/ginetsocketaddress.h:
 
-/usr/include/asio/impl/system_context.hpp:
+/usr/include/glib-2.0/gio/giostream.h:
 
-/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+/usr/include/glib-2.0/gio/gfileinputstream.h:
 
-/usr/include/c++/11/chrono:
+/usr/include/glib-2.0/gio/gfileinfo.h:
 
-/usr/include/asio/ip/address_v4.hpp:
+/usr/include/glib-2.0/gio/gfileicon.h:
 
-/usr/include/x86_64-linux-gnu/bits/epoll.h:
+/usr/include/glib-2.0/gio/gfileenumerator.h:
 
-/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+/usr/include/glib-2.0/gio/gfileattribute.h:
 
-/usr/include/arpa/inet.h:
+/usr/include/glib-2.0/gio/gfile.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
+/usr/include/glib-2.0/gio/gemblem.h:
 
-/usr/include/glib-2.0/gio/gconverter.h:
+/usr/include/glib-2.0/gio/gicon.h:
 
-/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
+/usr/include/glib-2.0/gio/gemblemedicon.h:
 
-/usr/include/asio/detail/reactive_socket_sendto_op.hpp:
+/usr/include/glib-2.0/gio/gdtlsserverconnection.h:
 
-/usr/include/asio/compose.hpp:
+/usr/include/glib-2.0/gio/gdtlsconnection.h:
 
-/usr/include/c++/11/cwctype:
+/usr/include/glib-2.0/gio/gdtlsclientconnection.h:
 
-/usr/include/asio/defer.hpp:
+/usr/include/glib-2.0/gio/gdebugcontrollerdbus.h:
 
-/usr/include/asio/ip/basic_endpoint.hpp:
+/usr/include/glib-2.0/gio/gdebugcontroller.h:
 
-/usr/include/asio/detail/signal_blocker.hpp:
+/usr/include/glib-2.0/gio/gdbusutils.h:
 
-/usr/include/strings.h:
+/usr/include/glib-2.0/gio/gdbusserver.h:
 
-/usr/include/glib-2.0/glib/gvariant.h:
+/usr/include/glib-2.0/gio/gdbusproxy.h:
 
-/usr/include/asio/io_service_strand.hpp:
+/usr/include/glib-2.0/gio/gdbusobjectskeleton.h:
 
-/usr/include/asio/detail/resolve_op.hpp:
+/usr/include/glib-2.0/gio/gdbusobjectmanagerserver.h:
+
+/usr/include/glib-2.0/gio/gdrive.h:
+
+/usr/include/x86_64-linux-gnu/bits/timerfd.h:
 
 /usr/include/asio/detail/atomic_count.hpp:
 
@@ -3716,8 +3825,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 ../headers/crow/compression.h:
 
-/usr/include/gstreamer-1.0/gst/gstmacros.h:
-
 /usr/include/asio/detail/reactor_op.hpp:
 
 /usr/include/c++/11/bits/locale_facets_nonio.tcc:
@@ -3725,18 +3832,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/detail/object_pool.hpp:
 
 /usr/include/asio/handler_alloc_hook.hpp:
-
-/usr/include/gstreamer-1.0/gst/base/gstadapter.h:
-
-/usr/include/gstreamer-1.0/gst/gststructure.h:
-
-/usr/include/glib-2.0/gio/gemblem.h:
-
-/usr/include/asio/detail/timer_queue_base.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/asio/detail/impl/posix_thread.ipp:
 
 /usr/include/asio/posix/descriptor.hpp:
 
@@ -3750,11 +3845,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/scheduler.hpp:
 
+/usr/local/include/gstreamer-1.0/gst/net/gstnetaddressmeta.h:
+
+../headers/crow/app.h:
+
 /usr/include/asio/async_result.hpp:
 
 /usr/include/asio/detail/posix_global.hpp:
-
-/usr/include/gstreamer-1.0/gst/glib-compat.h:
 
 /usr/include/glib-2.0/gobject/gbinding.h:
 
@@ -3767,10 +3864,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/asio/detail/resolve_endpoint_op.hpp:
-
-/usr/include/asio/ip/bad_address_cast.hpp:
-
-/usr/include/asio/detail/scheduler_operation.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
@@ -3794,8 +3887,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/hashtable.h:
 
-/usr/include/x86_64-linux-gnu/sys/ucontext.h:
-
 /usr/include/asio/detail/impl/posix_mutex.ipp:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
@@ -3810,19 +3901,19 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/rpc/netdb.h:
 
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
 /usr/include/netinet/in.h:
 
 /usr/include/x86_64-linux-gnu/sys/un.h:
-
-/usr/include/asio/detail/call_stack.hpp:
 
 /usr/include/c++/11/bits/stl_map.h:
 
 /usr/include/asio/traits/submit_free.hpp:
 
-/usr/include/asio/detail/scheduler_thread_info.hpp:
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsp-enumtypes.h:
 
-/usr/include/x86_64-linux-gnu/sys/uio.h:
+/usr/local/include/gstreamer-1.0/gst/gstpluginfeature.h:
 
 /usr/include/asio/ip/impl/address_v4.ipp:
 
@@ -3835,8 +3926,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/ip/basic_resolver_query.hpp:
 
 /usr/include/glib-2.0/glib/gmarkup.h:
-
-../headers/crow/websocket.h:
 
 /usr/include/glib-2.0/glib/gunicode.h:
 
@@ -3854,11 +3943,11 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
 
+/usr/local/include/gstreamer-1.0/gst/sdp/sdp.h:
+
 /usr/include/asio/serial_port_base.hpp:
 
 /usr/include/asio/traits/prefer_member.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /usr/include/fcntl.h:
 
@@ -3870,6 +3959,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
+/usr/local/include/gstreamer-1.0/gst/gstvalue.h:
+
 /usr/include/linux/posix_types.h:
 
 /usr/include/x86_64-linux-gnu/asm/types.h:
@@ -3880,23 +3971,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/generic/seq_packet_protocol.hpp:
 
+/usr/include/c++/11/pstl/glue_memory_defs.h:
+
 /usr/include/glib-2.0/glib/gdir.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
-
-/usr/include/asio/generic/raw_protocol.hpp:
-
-/usr/include/c++/11/condition_variable:
-
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 
 /usr/include/asio/detail/executor_op.hpp:
-
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-params.h:
 
 /usr/include/c++/11/iterator:
 
@@ -3910,25 +3995,11 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asm-generic/ioctl.h:
 
-/usr/include/glib-2.0/gio/gdtlsconnection.h:
-
-/usr/include/glib-2.0/gio/gsocketconnectable.h:
-
-/usr/include/x86_64-linux-gnu/asm/ioctls.h:
-
-/usr/include/glib-2.0/gio/gfileattribute.h:
-
-/usr/include/asio/basic_datagram_socket.hpp:
-
-/usr/include/asio/detail/socket_types.hpp:
-
 /usr/include/asio/impl/error_code.ipp:
 
 /usr/include/asio/coroutine.hpp:
 
 /usr/include/asio/impl/read_until.hpp:
-
-/usr/include/glib-2.0/glib/galloca.h:
 
 /usr/include/asio/detail/impl/posix_event.ipp:
 
@@ -3936,13 +4007,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/traits/query_free.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstpad.h:
-
 /usr/include/asio/traits/query_member.hpp:
 
 /usr/include/c++/11/initializer_list:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtspconnection.h:
+/usr/local/include/gstreamer-1.0/gst/gsttaglist.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstdeviceproviderfactory.h:
 
 /usr/include/asio/detail/fenced_block.hpp:
 
@@ -3958,37 +4029,19 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/functexcept.h:
 
+/usr/include/asm-generic/ioctls.h:
+
 /usr/include/asio/is_executor.hpp:
 
 /usr/include/asio/prefer.hpp:
-
-/usr/include/asio/execution/blocking.hpp:
 
 /usr/include/time.h:
 
 /usr/include/glib-2.0/glib/gdate.h:
 
-/usr/include/glib-2.0/gio/ginetaddressmask.h:
-
-/usr/include/glib-2.0/glib/deprecated/gallocator.h:
-
-/usr/include/c++/11/csignal:
-
-/usr/include/glib-2.0/gio/gmenumodel.h:
-
-/usr/include/asio/detail/bulk_executor_op.hpp:
-
-/usr/include/glib-2.0/glib/garray.h:
-
-/usr/include/gstreamer-1.0/gst/gsttypefindfactory.h:
-
 /usr/include/asio/impl/multiple_exceptions.ipp:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h:
-
 /usr/include/asio/version.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
 /usr/include/asio/multiple_exceptions.hpp:
 
@@ -4000,27 +4053,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/impl/write.hpp:
 
-/usr/include/glib-2.0/gio/gemblemedicon.h:
-
 /usr/include/asio/detail/thread_info_base.hpp:
 
 /usr/include/c++/11/bits/stl_heap.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
-
-/usr/include/asio/detail/noncopyable.hpp:
-
 /usr/include/c++/11/bits/stl_relops.h:
 
-/usr/include/asio/detail/cstddef.hpp:
-
-/usr/include/c++/11/cassert:
-
 /usr/include/asio/detail/wrapped_handler.hpp:
-
-/usr/include/asio/detail/timer_queue_set.hpp:
-
-/usr/include/asio/detail/assert.hpp:
 
 /usr/include/glib-2.0/gio/gfilemonitor.h:
 
@@ -4032,31 +4071,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/traits/connect_member.hpp:
 
-/usr/include/asio/detail/strand_service.hpp:
-
-/usr/include/asio/execution/receiver.hpp:
+/usr/include/asio/execution/detail/as_operation.hpp:
 
 /usr/include/linux/falloc.h:
-
-/usr/include/asio/detail/base_from_completion_cond.hpp:
 
 /usr/include/asio/require.hpp:
 
 /usr/include/glib-2.0/glib/ghash.h:
-
-/usr/include/gstreamer-1.0/gst/gsttoc.h:
-
-/usr/include/asio/execution/detail/bulk_sender.hpp:
-
-/usr/include/asio/detail/throw_error.hpp:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/asio/traits/schedule_free.hpp:
-
-/usr/include/asio/buffered_write_stream.hpp:
-
-/usr/include/asio/impl/thread_pool.ipp:
 
 /usr/include/asio/traits/require_member.hpp:
 
@@ -4068,12 +4089,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/execution.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
-
-/usr/include/asio/traits/execute_member.hpp:
-
-/usr/include/c++/11/bits/stl_multimap.h:
-
 /usr/include/asio/posix/basic_descriptor.hpp:
 
 /usr/include/asio/execution/set_error.hpp:
@@ -4082,19 +4097,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/traits/set_done_member.hpp:
 
-/usr/include/asio/execution/impl/receiver_invocation_error.ipp:
-
-/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
-
 /usr/include/asio/execution/receiver_invocation_error.hpp:
 
 /usr/include/asio/detail/op_queue.hpp:
 
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream-transport.h:
+
 /usr/include/x86_64-linux-gnu/bits/termios-tcflow.h:
-
-/usr/include/asio/detail/posix_signal_blocker.hpp:
-
-/usr/include/c++/11/atomic:
 
 /usr/include/asm-generic/int-ll64.h:
 
@@ -4110,21 +4119,41 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
-/usr/include/gstreamer-1.0/gst/gstcompat.h:
+/usr/local/include/gstreamer-1.0/gst/gsttypefind.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstevent.h:
 
 /usr/include/glib-2.0/gio/gdbusauthobserver.h:
-
-/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
 
 ../headers/crow/socket_adaptors.h:
 
 ../headers/crow/TinySHA1.hpp:
+
+/usr/include/asio/is_applicable_property.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+../headers/crow/ci_map.h:
+
+/usr/include/c++/11/bits/fs_ops.h:
+
+/usr/include/c++/11/bits/fs_dir.h:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/include/asio/basic_signal_set.hpp:
 
 /usr/include/c++/11/bits/locale_conv.h:
 
 /usr/include/asio/packaged_task.hpp:
 
 /usr/include/asio/detail/select_interrupter.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gstplugin.h:
 
 /usr/include/asio/traits/start_member.hpp:
 
@@ -4136,6 +4165,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
 
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-thread-pool.h:
+
 /usr/include/c++/11/bits/basic_ios.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
@@ -4144,91 +4175,39 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/termios.h:
 
+/usr/local/include/gstreamer-1.0/gst/gstsystemclock.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.h:
+
+/usr/include/asio/traits/set_value_free.hpp:
+
+/usr/include/asio/completion_condition.hpp:
+
 /usr/include/asio/traits/start_free.hpp:
 
 /usr/include/c++/11/ctime:
 
-/usr/include/c++/11/bits/locale_facets_nonio.h:
+/usr/include/asio/execution/detail/bulk_sender.hpp:
 
-/usr/include/asio/is_applicable_property.hpp:
+/usr/include/c++/11/tr1/beta_function.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+/usr/include/asio/detail/throw_error.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+/usr/include/asm-generic/errno-base.h:
 
-../headers/crow/ci_map.h:
+/usr/include/asio/traits/schedule_free.hpp:
 
-/usr/include/c++/11/bits/cxxabi_forced.h:
+/usr/include/asio/buffered_write_stream.hpp:
 
-/usr/include/c++/11/bits/regex_executor.h:
+/usr/include/asio/impl/thread_pool.ipp:
 
-/usr/include/glib-2.0/gio/gmenuexporter.h:
+/usr/include/c++/11/filesystem:
 
-/usr/include/asio/detail/conditionally_enabled_mutex.hpp:
+../headers/crow/settings.h:
 
-/usr/include/asio/detail/deadline_timer_service.hpp:
-
-/usr/include/c++/11/numeric:
-
-/usr/include/x86_64-linux-gnu/asm/sockios.h:
-
-/usr/include/asio/detail/type_traits.hpp:
-
-/usr/include/glib-2.0/gio/goutputstream.h:
-
-/usr/include/asio/detail/io_object_impl.hpp:
-
-/usr/include/c++/11/bits/stl_iterator_base_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
-/usr/include/c++/11/bit:
-
-/usr/include/assert.h:
-
-/usr/include/glib-2.0/gio/gtlsclientconnection.h:
-
-/usr/include/c++/11/bits/allocated_ptr.h:
-
-/usr/include/c++/11/ext/new_allocator.h:
-
-/usr/include/gstreamer-1.0/gst/base/gstbitwriter.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/c++/11/bits/std_function.h:
-
-/usr/include/gstreamer-1.0/gst/gstelement.h:
-
-/usr/include/c++/11/bits/stl_pair.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/c++/11/bits/ranges_base.h:
-
-/usr/include/asio/strand.hpp:
-
-/usr/include/c++/11/bits/basic_string.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
-
-/usr/include/c++/11/backward/binders.h:
-
-/usr/include/glib-2.0/gio/gasyncresult.h:
+/usr/include/c++/11/bits/refwrap.h:
 
 /usr/include/glib-2.0/glib/ghostutils.h:
-
-/usr/include/glib-2.0/gio/gdebugcontroller.h:
 
 /usr/include/asio/traits/set_value_member.hpp:
 
@@ -4246,9 +4225,107 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/resolver_service_base.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/locale.h:
+/usr/include/c++/11/numeric:
 
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/asio/execution/receiver.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session.h:
+
+/usr/local/include/gstreamer-1.0/gst/net/gstnet.h:
+
+/usr/include/c++/11/bits/random.h:
+
+/usr/include/asio/buffered_stream_fwd.hpp:
+
+/usr/include/glib-2.0/glib/gdatetime.h:
+
+/usr/include/asio/detail/impl/resolver_service_base.ipp:
+
+/usr/include/glib-2.0/gio/gsocketconnectable.h:
+
+/usr/include/x86_64-linux-gnu/asm/ioctls.h:
+
+/usr/include/c++/11/tr1/exp_integral.tcc:
+
+/usr/include/c++/11/tr1/ell_integral.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
+
+/usr/include/c++/11/tr1/bessel_function.tcc:
+
+/usr/include/asio/detail/timer_queue_base.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/asio/detail/scheduler_operation.hpp:
+
+/usr/include/asio/ip/bad_address_cast.hpp:
+
+/usr/include/asio/detail/impl/posix_thread.ipp:
+
+/usr/include/c++/11/tr1/special_function_util.h:
+
+/usr/include/c++/11/bits/cxxabi_forced.h:
+
+/usr/include/asio/execution/set_value.hpp:
+
+/usr/include/c++/11/bits/regex_executor.h:
+
+/usr/include/glib-2.0/gio/gmenuexporter.h:
+
+/usr/include/asio/detail/conditionally_enabled_mutex.hpp:
+
+/usr/include/asio/detail/deadline_timer_service.hpp:
+
+/usr/include/asio/detail/signal_blocker.hpp:
+
+/usr/include/c++/11/ext/new_allocator.h:
+
+/usr/include/glib-2.0/gio/gtlsclientconnection.h:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/include/assert.h:
+
+/usr/include/c++/11/codecvt:
+
+/usr/local/include/gstreamer-1.0/gst/net/net-prelude.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/c++/11/bits/std_function.h:
+
+/usr/include/c++/11/bits/stl_pair.h:
+
+/usr/local/include/gstreamer-1.0/gst/base/gsttypefindhelper.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/asio/strand.hpp:
+
+/usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/11/backward/binders.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstenumtypes.h:
+
+/usr/include/glib-2.0/gio/gasyncresult.h:
+
+/usr/local/include/gstreamer-1.0/gst/gsttocsetter.h:
+
+/usr/include/c++/11/pstl/glue_numeric_defs.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/asio/use_awaitable.hpp:
 
@@ -4262,15 +4339,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/handler_continuation_hook.hpp:
 
-/usr/include/gstreamer-1.0/gst/gsturi.h:
-
 /usr/include/c++/11/bits/localefwd.h:
 
 /usr/include/asio/impl/system_executor.hpp:
-
-/usr/include/gstreamer-1.0/gst/gstenumtypes.h:
-
-/usr/include/gstreamer-1.0/gst/gsttracer.h:
 
 /usr/include/c++/11/bits/exception_ptr.h:
 
@@ -4286,6 +4357,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
+/usr/include/asio/execution/executor.hpp:
+
 /usr/include/glib-2.0/glib/gqsort.h:
 
 /usr/include/asio/detail/config.hpp:
@@ -4294,11 +4367,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/traits/equality_comparable.hpp:
 
+/usr/include/asio/detail/timer_queue_ptime.hpp:
+
+/usr/include/asio/detail/static_mutex.hpp:
+
 /usr/include/c++/11/cctype:
 
 /usr/include/c++/11/unordered_map:
-
-/usr/include/gstreamer-1.0/gst/gstcaps.h:
 
 /usr/include/asio/execution/invocable_archetype.hpp:
 
@@ -4306,11 +4381,19 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
-/usr/include/gstreamer-1.0/gst/gstchildproxy.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/c++/11/bits/range_access.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-token.h:
+
+/usr/include/x86_64-linux-gnu/sys/ioctl.h:
+
+/usr/include/asio/detail/socket_ops.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -4320,19 +4403,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/asio/execution/relationship.hpp:
-
-/usr/include/c++/11/cwchar:
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspconnection.h:
 
 /usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/bits/statx.h:
+
+/usr/local/include/gstreamer-1.0/gst/base/gstflowcombiner.h:
 
 /usr/include/unistd.h:
 
@@ -4342,15 +4421,29 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
+/usr/include/asm-generic/socket.h:
+
+/usr/include/glib-2.0/gio/gioerror.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/c++/11/bits/invoke.h:
+
+/usr/local/include/gstreamer-1.0/gst/sdp/gstmikey.h:
+
 /usr/include/asio/detail/local_free_on_block_exit.hpp:
 
 /usr/include/c++/11/climits:
 
-/usr/include/gstreamer-1.0/gst/base/gstqueuearray.h:
+/usr/include/c++/11/bits/sstream.tcc:
 
 /usr/include/glib-2.0/gio/gsocketlistener.h:
 
 /usr/include/asio/detail/event.hpp:
+
+/usr/include/glib-2.0/gio/gdbusobjectproxy.h:
+
+/usr/include/c++/11/new:
 
 /usr/include/asio/executor_work_guard.hpp:
 
@@ -4374,11 +4467,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/reactor_fwd.hpp:
 
-/usr/include/gstreamer-1.0/gst/sdp/gstsdpmessage.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/include/netinet/tcp.h:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstdevicemonitor.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
@@ -4387,34 +4484,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/glib-2.0/gio/gconverteroutputstream.h:
-
-/usr/include/c++/11/ext/string_conversions.h:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/asio/impl/system_context.ipp:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/gstreamer-1.0/gst/gst.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/asm-generic/socket.h:
-
-/usr/include/glib-2.0/gio/gioerror.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/c++/11/bits/invoke.h:
-
-../headers/crow/http_connection.h:
-
-/usr/include/c++/11/cstdint:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
@@ -4425,6 +4494,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/handler_invoke_hook.hpp:
 
 /usr/include/asio/detail/completion_handler.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/base/gstaggregator.h:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
@@ -4442,6 +4513,28 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/asio/detail/type_traits.hpp:
+
+/usr/include/glib-2.0/gio/goutputstream.h:
+
+/usr/include/asio/detail/io_object_impl.hpp:
+
+/usr/include/c++/11/cwchar:
+
+/usr/include/asio/execution/relationship.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspextension.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/c++/11/bit:
+
+/usr/include/c++/11/cstdint:
+
+../headers/crow/http_connection.h:
+
 ../headers/crow/common.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
@@ -4449,8 +4542,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/asio/generic/stream_protocol.hpp:
-
-/usr/include/asio/impl/handler_alloc_hook.ipp:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
@@ -4466,29 +4557,33 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+/usr/include/arpa/inet.h:
+
+/usr/include/c++/11/tr1/gamma.tcc:
 
 /usr/include/c++/11/bits/ostream_insert.h:
+
+/usr/include/asio/detail/signal_handler.hpp:
 
 ../headers/crow/task_timer.h:
 
 /usr/include/glib-2.0/gio/gbytesicon.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/c++/11/tr1/legendre_function.tcc:
+
+/usr/include/glib-2.0/gio/gdbusnamewatching.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/asio/detail/impl/epoll_reactor.ipp:
+/usr/include/c++/11/bits/list.tcc:
 
-/usr/include/asio/associated_executor.hpp:
-
-/usr/include/c++/11/bits/stringfwd.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp/rtsp-prelude.h:
 
 /usr/include/c++/11/type_traits:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
-
-/usr/include/glib-2.0/glib/gtimer.h:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
@@ -4496,9 +4591,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/future.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstminiobject.h:
+/usr/include/asio/require_concept.hpp:
 
 /usr/include/c++/11/cmath:
+
+/usr/include/c++/11/pstl/pstl_config.h:
+
+/usr/include/asio/steady_timer.hpp:
 
 /usr/include/linux/ioctl.h:
 
@@ -4512,13 +4611,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 ../headers/crow.h:
 
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
 /usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 
 ../headers/crow/query_string.h:
-
-/usr/include/gstreamer-1.0/gst/gstdynamictypefactory.h:
 
 /usr/include/string.h:
 
@@ -4526,9 +4621,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
-/usr/include/gstreamer-1.0/gst/gstmeta.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-server.h:
+
+/usr/include/c++/11/chrono:
+
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/asio/ip/address_v4.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstbufferlist.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
@@ -4540,15 +4643,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/limits.h:
 
+/usr/include/c++/11/tr1/riemann_zeta.tcc:
+
 /usr/include/asio/detail/impl/service_registry.hpp:
 
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
+
 ../headers/crow/mustache.h:
-
-/usr/include/gstreamer-1.0/gst/gstconfig.h:
-
-/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/sys/eventfd.h:
 
@@ -4572,6 +4673,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/recycling_allocator.hpp:
 
+/usr/include/asio/detail/reactive_socket_service_base.hpp:
+
+/usr/include/stdio.h:
+
 /usr/include/poll.h:
 
 /usr/include/glib-2.0/gio/gtlsinteraction.h:
@@ -4585,6 +4690,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/regex_scanner.h:
 
 /usr/include/asio/execution/detail/as_invocable.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gst.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
@@ -4600,6 +4707,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/socket_base.hpp:
 
+/usr/local/include/gstreamer-1.0/gst/gstmacros.h:
+
 /usr/include/glib-2.0/glib/gqueue.h:
 
 /usr/include/c++/11/bits/atomic_base.h:
@@ -4608,9 +4717,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/random.tcc:
 
-/usr/include/stdc-predef.h:
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:
 
-/usr/include/asio/ip/v6_only.hpp:
+/usr/include/c++/11/tr1/poly_hermite.tcc:
 
 /usr/include/c++/11/bits/memoryfwd.h:
 
@@ -4625,12 +4734,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/glib/gcharset.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/asio/traits/prefer_free.hpp:
-
-/usr/include/glib-2.0/gio/gactiongroupexporter.h:
-
-/usr/include/asio/detail/chrono.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
@@ -4650,6 +4753,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/ext/type_traits.h:
 
+/usr/include/asio/ip/v6_only.hpp:
+
+/usr/include/stdc-predef.h:
+
 /usr/include/c++/11/regex:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
@@ -4657,6 +4764,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asm-generic/types.h:
 
 /usr/include/glib-2.0/glib/gstrvbuilder.h:
+
+/usr/include/c++/11/bits/alloc_traits.h:
+
+/usr/include/asio/ip/basic_resolver_results.hpp:
 
 /usr/include/c++/11/streambuf:
 
@@ -4666,21 +4777,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/glib-2.0/gio/gfileicon.h:
-
 /usr/include/c++/11/locale:
 
 /usr/include/asio/detail/descriptor_write_op.hpp:
 
 /usr/include/asio/detail/null_event.hpp:
 
-/usr/include/asio/wait_traits.hpp:
-
 /usr/include/endian.h:
 
-/usr/include/c++/11/experimental/bits/lfts_config.h:
-
 /usr/include/asio/ip/impl/network_v6.ipp:
+
+/usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
 /usr/include/c++/11/bits/ostream.tcc:
 
@@ -4690,17 +4797,41 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 ../headers/CustomLogger.h:
 
-/usr/include/glib-2.0/gio/gresolver.h:
+/usr/local/include/gstreamer-1.0/gst/gstdatetime.h:
 
-/usr/include/gstreamer-1.0/gst/gstpadtemplate.h:
+/usr/include/asio/ip/multicast.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
+
+/usr/include/asio/traits/schedule_member.hpp:
+
+/usr/include/asio/detached.hpp:
+
+/usr/include/errno.h:
+
+/usr/include/glib-2.0/glib/gquark.h:
+
+/usr/include/c++/11/bits/functional_hash.h:
+
+/usr/include/asio/execution/set_done.hpp:
+
+/usr/include/c++/11/bits/move.h:
+
+/usr/include/c++/11/bits/hash_bytes.h:
+
+/usr/include/c++/11/bits/string_view.tcc:
+
+/usr/include/c++/11/ext/string_conversions.h:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspdefs.h:
 
 /usr/include/asio/detail/impl/epoll_reactor.hpp:
 
-/usr/include/asio/impl/detached.hpp:
-
 /usr/include/stdlib.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-context.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-permissions.h:
 
 /usr/include/asio/detail/operation.hpp:
 
@@ -4716,23 +4847,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
-/usr/include/asio/detail/signal_handler.hpp:
-
-/usr/include/gstreamer-1.0/gst/gstparse.h:
-
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/11/iostream:
 
-../headers/crow/settings.h:
-
-/usr/include/c++/11/bits/refwrap.h:
+/usr/local/include/gstreamer-1.0/gst/gstdynamictypefactory.h:
 
 /usr/include/asio/traits/connect_free.hpp:
 
 /usr/include/asio/generic/detail/endpoint.hpp:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtsp.h:
+/usr/include/asio/posix/stream_descriptor.hpp:
 
 /usr/include/alloca.h:
 
@@ -4772,33 +4897,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/io_control.hpp:
 
-/usr/include/asio/detail/thread_group.hpp:
-
-/usr/include/asio/detail/variadic_templates.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/asio/detail/reactive_socket_recvmsg_op.hpp:
-
-/usr/include/asio/ip/multicast.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
-
-/usr/include/asio/traits/schedule_member.hpp:
-
-/usr/include/asio/detached.hpp:
-
-/usr/include/errno.h:
-
-/usr/include/glib-2.0/glib/gquark.h:
-
-/usr/include/c++/11/bits/functional_hash.h:
-
-/usr/include/asio/execution/set_done.hpp:
-
-/usr/include/c++/11/bits/move.h:
-
-/usr/include/c++/11/bits/hash_bytes.h:
 
 /usr/include/asio/traits/submit_member.hpp:
 
@@ -4816,6 +4917,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/grefstring.h:
 
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-params.h:
+
 /usr/include/asio/detail/service_registry.hpp:
 
 /usr/include/asio/traits/require_free.hpp:
@@ -4828,19 +4931,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-../headers/TranscodingService.h:
+/usr/include/c++/11/bits/fs_fwd.h:
 
-/usr/include/asio/detail/impl/reactive_serial_port_service.ipp:
+/usr/local/include/gstreamer-1.0/gst/gstmeta.h:
 
-/usr/include/asio/basic_socket.hpp:
+/usr/include/asio/ip/impl/network_v6.hpp:
+
+/usr/include/asio/ip/udp.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/asio/impl/compose.hpp:
-
-/usr/include/gstreamer-1.0/gst/gststreams.h:
-
-/usr/include/gstreamer-1.0/gst/gstdebugutils.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
@@ -4862,6 +4963,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/debug/debug.h:
 
+/usr/include/c++/11/tr1/poly_laguerre.tcc:
+
+/usr/local/include/gstreamer-1.0/gst/gstcaps.h:
+
 /usr/include/c++/11/array:
 
 /usr/include/glib-2.0/gio/gmemorymonitor.h:
@@ -4875,6 +4980,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/erase_if.h:
 
 /usr/include/c++/11/ostream:
+
+/usr/include/c++/11/any:
 
 /usr/include/c++/11/bits/unique_ptr.h:
 
@@ -4892,11 +4999,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/impl/scheduler.ipp:
 
+/usr/local/include/gstreamer-1.0/gst/gststreams.h:
+
 /usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/glib-2.0/gobject/gtypemodule.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+/usr/include/glib-2.0/gio/gmountoperation.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstatomicqueue.h:
 
 /usr/include/c++/11/bits/ios_base.h:
 
@@ -4916,13 +5027,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/is_executor.hpp:
 
-/usr/include/gstreamer-1.0/gst/net/gstnet.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
 /usr/include/glib-2.0/glib/gslist.h:
+
+/usr/local/include/gstreamer-1.0/gst/net/gstnetclientclock.h:
 
 /usr/include/asio/detail/limits.hpp:
 
@@ -4931,8 +5038,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/gio/gbufferedoutputstream.h:
 
 /usr/include/c++/11/utility:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
 /usr/include/c++/11/stdexcept:
 
@@ -4946,21 +5051,27 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsprange.h:
+
 /usr/include/asio/impl/error.ipp:
 
 ../headers/crow/http_parser_merged.h:
 
 /usr/include/c++/11/bits/locale_facets.h:
 
-/usr/include/gstreamer-1.0/gst/gstmessage.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
+
+/usr/include/c++/11/cwctype:
+
+/usr/include/c++/11/atomic:
+
+/usr/include/asio/detail/posix_signal_blocker.hpp:
+
+/usr/include/asio/ip/basic_endpoint.hpp:
 
 /usr/include/asio/traits/execute_free.hpp:
 
 /usr/include/asio/uses_executor.hpp:
-
-/usr/include/glib-2.0/gio/gdtlsclientconnection.h:
 
 /usr/include/x86_64-linux-gnu/bits/socket.h:
 
@@ -4969,8 +5080,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/detail/impl/null_event.ipp:
 
 /usr/include/linux/types.h:
-
-/usr/include/glib-2.0/gio/gicon.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
@@ -4992,6 +5101,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/enable_special_members.h:
 
+/usr/local/include/gstreamer-1.0/gst/gstpad.h:
+
 /usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/c++/11/istream:
@@ -5002,11 +5113,27 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/any_io_executor.hpp:
 
+/usr/include/c++/11/ratio:
+
+/usr/include/asio/impl/executor.hpp:
+
 /usr/include/c++/11/memory:
 
 /usr/include/glib-2.0/gio/gsimplepermission.h:
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
+
+/usr/include/glib-2.0/gio/gvolumemonitor.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstelementfactory.h:
+
+/usr/include/glib-2.0/gio/gfileiostream.h:
+
+/usr/include/glib-2.0/gio/gdbusobjectmanagerclient.h:
+
+/usr/include/asio/detail/posix_event.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gstutils.h:
 
 /usr/include/asio/detail/reactive_socket_accept_op.hpp:
 
@@ -5016,15 +5143,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/impl/connect.hpp:
 
+/usr/include/c++/11/iomanip:
+
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
+
 /usr/include/linux/version.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
-
-/usr/include/gstreamer-1.0/gst/gstdeviceprovider.h:
-
-/usr/include/asio/traits/set_value_free.hpp:
-
-/usr/include/asio/completion_condition.hpp:
 
 /usr/include/c++/11/string:
 
@@ -5038,6 +5163,16 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/atomic_futex.h:
 
+/usr/include/glib-2.0/glib/grcbox.h:
+
+/usr/include/c++/11/bits/stl_algo.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/11/pstl/execution_defs.h:
+
+/usr/local/include/gstreamer-1.0/gst/gsttask.h:
+
 /usr/include/asio.hpp:
 
 /usr/include/asio/detail/executor_function.hpp:
@@ -5045,12 +5180,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/sstream:
 
 ../headers/crow/middleware_context.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/glib-2.0/glib/grcbox.h:
-
-/usr/include/c++/11/bits/stl_algo.h:
 
 /usr/include/glib-2.0/gio/gioscheduler.h:
 
@@ -5062,9 +5191,11 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/11/bits/random.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstbasesrc.h:
 
-/usr/include/asio/buffered_stream_fwd.hpp:
+/usr/include/asio/execution/execute.hpp:
+
+/usr/include/asio/detail/impl/throw_error.ipp:
 
 /usr/include/x86_64-linux-gnu/bits/in.h:
 
@@ -5076,17 +5207,109 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-permissions.h:
-
 /usr/include/asio/execution/start.hpp:
+
+/usr/include/asio/execution/impl/receiver_invocation_error.ipp:
+
+/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
+
+/usr/include/asio/traits/prefer_free.hpp:
+
+/usr/include/asio/detail/chrono.hpp:
+
+/usr/include/glib-2.0/gio/gactiongroupexporter.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/c++/11/bits/specfun.h:
 
 /usr/include/asio/error_code.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
+/usr/local/include/gstreamer-1.0/gst/base/gstqueuearray.h:
+
+/usr/include/asio/associated_executor.hpp:
+
+/usr/include/c++/11/bits/stringfwd.h:
+
+/usr/include/asio/detail/impl/epoll_reactor.ipp:
+
+/usr/include/asio/io_service_strand.hpp:
+
+/usr/include/asio/detail/resolve_op.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/epoll.h:
+
+/usr/include/asio/detail/noncopyable.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
+
+/usr/include/x86_64-linux-gnu/sys/uio.h:
+
+/usr/include/asio/detail/scheduler_thread_info.hpp:
+
+/usr/include/glib-2.0/glib/gvariant.h:
+
+/usr/include/c++/11/csignal:
+
+/usr/include/glib-2.0/gio/gmenumodel.h:
+
+/usr/include/asio/detail/bulk_executor_op.hpp:
+
+/usr/include/glib-2.0/glib/garray.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
+
+/usr/include/asio/detail/reactive_socket_sendto_op.hpp:
+
+/usr/include/asio/compose.hpp:
+
+/usr/include/glib-2.0/glib/gtimer.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
+
+/usr/include/glib-2.0/gio/gconverter.h:
+
+/usr/include/asio/traits/execute_member.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+
+/usr/include/asio/generic/raw_protocol.hpp:
+
+/usr/include/c++/11/condition_variable:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
+
+/usr/include/asio/detail/strand_service.hpp:
 
 /usr/include/c++/11/limits:
 
-/usr/include/glib-2.0/gio/gdtlsserverconnection.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
+
+/usr/include/asio/detail/variadic_templates.hpp:
+
+/usr/include/asio/detail/thread_group.hpp:
+
+/usr/include/asio/impl/system_context.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/asio/impl/system_context.ipp:
+
+../headers/TranscodingService.h:
+
+/usr/include/asio/detail/impl/reactive_serial_port_service.ipp:
+
+/usr/include/asio/basic_socket.hpp:
 
 /usr/include/asio/io_context.hpp:
 
@@ -5096,9 +5319,7 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/giochannel.h:
 
-/usr/include/asio/impl/executor.hpp:
-
-/usr/include/c++/11/ratio:
+/usr/local/include/gstreamer-1.0/gst/sdp/gstsdp.h:
 
 /usr/include/asio/post.hpp:
 
@@ -5122,17 +5343,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/string_view.hpp:
 
-/usr/include/c++/11/experimental/string_view:
-
-/usr/include/glib-2.0/gio/gpollableinputstream.h:
-
-/usr/include/glib-2.0/gio/gdbusmessage.h:
-
-/usr/include/c++/11/experimental/bits/string_view.tcc:
-
 /usr/include/asio/system_error.hpp:
 
 /usr/include/asio/detail/is_buffer_sequence.hpp:
+
+/usr/include/asio/impl/detached.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gstbus.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstbufferpool.h:
 
 /usr/include/glib-2.0/glib/deprecated/grel.h:
 
@@ -5140,23 +5359,17 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/socket_holder.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/ioctl.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/asio/detail/socket_ops.hpp:
-
 /usr/include/asio/detail/impl/socket_ops.ipp:
 
-/usr/include/stdio.h:
-
-/usr/include/asio/detail/reactive_socket_service_base.hpp:
+/usr/include/asio/detail/reactive_socket_send_op.hpp:
 
 /usr/include/asio/detail/std_fenced_block.hpp:
 
 /usr/include/asio/detail/reactive_wait_op.hpp:
 
 /usr/include/asio/system_timer.hpp:
+
+/usr/include/c++/11/bits/fs_path.h:
 
 /usr/include/asio/detail/impl/reactive_socket_service_base.ipp:
 
@@ -5169,6 +5382,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/basic_raw_socket.hpp:
 
 /usr/include/asio/basic_seq_packet_socket.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/base/gstbitreader.h:
 
 /usr/include/c++/11/ext/atomicity.h:
 
@@ -5188,8 +5403,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h:
 
-/usr/include/glib-2.0/gio/gfile.h:
-
 /usr/include/glib-2.0/gio/gsettings.h:
 
 /usr/include/c++/11/bits/std_abs.h:
@@ -5206,23 +5419,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/detail/descriptor_read_op.hpp:
 
+/usr/local/include/gstreamer-1.0/gst/gstprotection.h:
+
+/usr/local/include/gstreamer-1.0/gst/base/gstcollectpads.h:
+
+/usr/include/asio/posix/descriptor_base.hpp:
+
 /usr/include/asio/detail/impl/reactive_descriptor_service.ipp:
 
-/usr/include/gstreamer-1.0/gst/gstdeviceproviderfactory.h:
-
-/usr/include/asio/basic_signal_set.hpp:
-
-/usr/include/c++/11/bits/quoted_string.h:
-
 /usr/include/asio/detail/impl/signal_set_service.ipp:
-
-/usr/include/asio/detail/timer_queue_ptime.hpp:
-
-/usr/include/asio/detail/static_mutex.hpp:
-
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/11/iomanip:
 
 /usr/include/asio/detail/posix_static_mutex.hpp:
 
@@ -5233,8 +5438,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/gio/gsocketaddressenumerator.h:
 
 /usr/include/asio/basic_socket_streambuf.hpp:
-
-/usr/include/asio/steady_timer.hpp:
 
 /usr/include/asio/basic_waitable_timer.hpp:
 
@@ -5268,13 +5471,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/usr/include/gstreamer-1.0/gst/gstcontrolsource.h:
-
 /usr/include/asio/buffered_read_stream_fwd.hpp:
 
 /usr/include/glib-2.0/gio/gfileoutputstream.h:
 
 /usr/include/asio/buffered_read_stream.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gsttracerfactory.h:
 
 /usr/include/asio/detail/buffered_stream_storage.hpp:
 
@@ -5308,8 +5511,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/deadline_timer.hpp:
 
-/usr/include/gstreamer-1.0/gst/gsttaskpool.h:
-
 /usr/include/asio/impl/defer.hpp:
 
 /usr/include/asio/executor.hpp:
@@ -5320,9 +5521,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/placeholders.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstmemory.h:
-
 /usr/include/asio/generic/detail/impl/endpoint.ipp:
+
+/usr/local/include/gstreamer-1.0/gst/glib-compat.h:
+
+/usr/include/glib-2.0/glib/galloca.h:
+
+/usr/local/include/gstreamer-1.0/gst/gsturi.h:
 
 /usr/include/asio/generic/datagram_protocol.hpp:
 
@@ -5334,13 +5539,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/gbookmarkfile.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp/rtsp.h:
-
 /usr/include/asio/detail/array.hpp:
 
 /usr/include/asio/detail/winsock_init.hpp:
-
-/usr/include/gstreamer-1.0/gst/gststreamcollection.h:
 
 /usr/include/asio/ip/impl/address_v4.hpp:
 
@@ -5360,13 +5561,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/ip/impl/address.ipp:
 
+/usr/include/asio/detail/cstddef.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-media.h:
+
 /usr/include/asio/ip/address_v4_range.hpp:
 
-/usr/include/c++/11/new:
-
-/usr/include/glib-2.0/gio/gdbusobjectproxy.h:
-
 /usr/include/asio/ip/address_v6_iterator.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/base/gstbaseparse.h:
 
 /usr/include/asio/ip/address_v6_range.hpp:
 
@@ -5375,8 +5578,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/glib/gscanner.h:
 
 /usr/include/glib-2.0/glib/gstringchunk.h:
-
-/usr/include/gstreamer-1.0/gst/gstbuffer.h:
 
 /usr/include/asio/ip/network_v4.hpp:
 
@@ -5390,10 +5591,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/ip/network_v6.hpp:
 
-/usr/include/asio/ip/impl/network_v6.hpp:
-
-/usr/include/asio/ip/udp.hpp:
-
 /usr/include/asio/ip/detail/endpoint.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
@@ -5401,8 +5598,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/ip/basic_resolver_iterator.hpp:
 
 /usr/include/asio/ip/basic_resolver_entry.hpp:
-
-/usr/include/gstreamer-1.0/gst/gsttocsetter.h:
 
 /usr/include/asio/ip/resolver_base.hpp:
 
@@ -5415,8 +5610,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/sys/socket.h:
 
 /usr/include/asio/detail/resolve_query_op.hpp:
-
-/usr/include/asio/detail/impl/resolver_service_base.ipp:
 
 /usr/include/asio/ip/impl/host_name.ipp:
 
@@ -5434,8 +5627,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/gkeyfile.h:
 
-/usr/include/gstreamer-1.0/gst/gstplugin.h:
-
 /usr/include/asio/local/detail/impl/endpoint.ipp:
 
 /usr/include/asio/local/connect_pair.hpp:
@@ -5444,23 +5635,23 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asio/local/datagram_protocol.hpp:
 
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/local/include/gstreamer-1.0/gst/gsterror.h:
+
 /usr/include/c++/11/future:
 
 /usr/include/c++/11/mutex:
+
+/usr/include/asio/detail/call_stack.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gstmessage.h:
 
 /usr/include/asio/ip/resolver_query_base.hpp:
 
 /usr/include/c++/11/bits/std_mutex.h:
 
 /usr/include/c++/11/bits/unique_lock.h:
-
-/usr/include/gstreamer-1.0/gst/gsttask.h:
-
-/usr/include/asio/execution/scheduler.hpp:
-
-/usr/include/gstreamer-1.0/gst/gstversion.h:
-
-/usr/include/c++/11/bits/std_thread.h:
 
 /usr/include/c++/11/cstdio:
 
@@ -5476,6 +5667,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/fstream:
 
+/usr/include/asio/write_at.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gststreamcollection.h:
+
 /usr/include/asio/detail/regex_fwd.hpp:
 
 /usr/include/glib-2.0/glib/gtimezone.h:
@@ -5483,10 +5678,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/impl/redirect_error.hpp:
 
 /usr/include/asio/traits/static_require_concept.hpp:
-
-../headers/crow/app.h:
-
-/usr/include/gstreamer-1.0/gst/gstbufferlist.h:
 
 /usr/include/glib-2.0/gio/gloadableicon.h:
 
@@ -5498,13 +5689,25 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/cfloat:
 
+/usr/local/include/gstreamer-1.0/gst/gstbuffer.h:
+
 /usr/include/asio/thread_pool.hpp:
 
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-media.h:
+
 /usr/include/asio/detail/blocking_executor_op.hpp:
+
+/usr/include/asio/detail/strand_executor_service.hpp:
 
 /usr/include/netdb.h:
 
 /usr/include/asio/detail/impl/strand_executor_service.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gstparse.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-sdp.h:
+
+/usr/local/include/gstreamer-1.0/gst/gsttagsetter.h:
 
 /usr/include/asio/awaitable.hpp:
 
@@ -5513,6 +5716,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/asio/impl/execution_context.ipp:
 
 /usr/include/asio/windows/basic_object_handle.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-stream.h:
 
 /usr/include/asio/windows/overlapped_handle.hpp:
 
@@ -5546,21 +5751,29 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+/usr/local/include/gstreamer-1.0/gst/gstdevice.h:
 
-/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
 /usr/include/c++/11/cstdlib:
 
+/usr/include/c++/11/string_view:
+
+/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+
 /usr/include/glib-2.0/glib/gvarianttype.h:
+
+/usr/include/glib-2.0/gio/ginetaddressmask.h:
+
+/usr/include/glib-2.0/glib/deprecated/gallocator.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstelement.h:
 
 /usr/include/asio/windows/object_handle.hpp:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
 /usr/include/c++/11/map:
-
-/usr/include/glib-2.0/gio/gdebugcontrollerdbus.h:
 
 /usr/include/c++/11/bits/stl_tree.h:
 
@@ -5594,13 +5807,25 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 ../TranscodingService.cpp:
 
+/usr/include/asio/detail/socket_types.hpp:
+
+/usr/include/asio/basic_datagram_socket.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsptransport.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstcontrolbinding.h:
+
 /usr/include/glib-2.0/glib.h:
 
 /usr/include/glib-2.0/glib/gmacros.h:
 
-/usr/include/glib-2.0/glib/gversion.h:
+/usr/include/asio/execution/scheduler.hpp:
 
-/usr/include/gstreamer-1.0/gst/gsttracerrecord.h:
+/usr/include/c++/11/bits/std_thread.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstcapsfeatures.h:
+
+/usr/include/glib-2.0/glib/gversion.h:
 
 /usr/include/asio/ip/unicast.hpp:
 
@@ -5616,6 +5841,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/stdlib.h:
 
+../headers/crow/websocket.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstformat.h:
+
 /usr/include/asio/execution/bulk_guarantee.hpp:
 
 /usr/include/glib-2.0/gio/gfilterinputstream.h:
@@ -5624,11 +5853,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/gbitlock.h:
 
-/usr/include/glib-2.0/glib/gdatetime.h:
-
 /usr/include/glib-2.0/glib/gbytes.h:
 
+/usr/local/include/gstreamer-1.0/gst/gstdebugutils.h:
+
 /usr/include/glib-2.0/glib/gchecksum.h:
+
+/usr/include/c++/11/tr1/hypergeometric.tcc:
 
 /usr/include/glib-2.0/glib/gregex.h:
 
@@ -5639,12 +5870,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/glib-2.0/glib/gdataset.h:
-
-/usr/include/gstreamer-1.0/gst/gstallocator.h:
-
-/usr/include/asio/windows/basic_random_access_handle.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/dirent.h:
 
 /usr/include/glib-2.0/glib/genviron.h:
 
@@ -5678,11 +5903,13 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/gthreadpool.h:
 
-../headers/datetime.h:
-
-/usr/include/glib-2.0/glib/gstring.h:
-
 /usr/include/glib-2.0/glib/gmessages.h:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+/usr/include/c++/11/bits/exception.h:
+
+/usr/local/include/gstreamer-1.0/gst/gsttracerrecord.h:
 
 /usr/include/glib-2.0/glib/gprimes.h:
 
@@ -5714,6 +5941,10 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/glib/deprecated/gcompletion.h:
 
+/usr/include/asio/wait_traits.hpp:
+
+/usr/local/include/gstreamer-1.0/gst/gstmemory.h:
+
 /usr/include/glib-2.0/glib/deprecated/gthread.h:
 
 /usr/include/glib-2.0/glib/glib-autocleanups.h:
@@ -5730,21 +5961,15 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gobject/gsignal.h:
 
+/usr/local/include/gstreamer-1.0/gst/gstcompat.h:
+
 /usr/include/glib-2.0/gobject/gbindinggroup.h:
-
-/usr/include/glib-2.0/gio/gmenu.h:
-
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-prelude.h:
-
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtsprange.h:
 
 /usr/include/glib-2.0/gobject/glib-enumtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/eventfd.h:
 
 /usr/include/glib-2.0/gobject/gparamspecs.h:
-
-/usr/include/glib-2.0/gio/gdbusserver.h:
 
 /usr/include/glib-2.0/gio/gtestdbus.h:
 
@@ -5753,6 +5978,8 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/gobject/gmarshal.h:
 
 /usr/include/glib-2.0/gobject/gtypeplugin.h:
+
+/usr/local/include/gstreamer-1.0/gst/gstpromise.h:
 
 /usr/include/glib-2.0/glib/gtrashstack.h:
 
@@ -5766,155 +5993,139 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/gcontenttype.h:
 
-/usr/include/gstreamer-1.0/gst/gstatomicqueue.h:
+/usr/include/netinet/tcp.h:
 
-/usr/include/gstreamer-1.0/gst/gstbin.h:
+/usr/local/include/gstreamer-1.0/gst/gstconfig.h:
 
-/usr/include/gstreamer-1.0/gst/gstghostpad.h:
+/usr/local/include/gstreamer-1.0/gst/gstversion.h:
 
-/usr/include/asio/detail/strand_executor_service.hpp:
+/usr/local/include/gstreamer-1.0/gst/gstbin.h:
 
-/usr/include/gstreamer-1.0/gst/gstcontrolbinding.h:
+/usr/include/asio/detail/base_from_completion_cond.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstclock.h:
+/usr/local/include/gstreamer-1.0/gst/gstobject.h:
 
-/usr/include/glib-2.0/gio/gliststore.h:
+/usr/local/include/gstreamer-1.0/gst/gstcontrolsource.h:
 
-/usr/include/gstreamer-1.0/gst/gstcapsfeatures.h:
+/usr/include/asio/impl/handler_alloc_hook.ipp:
 
-/usr/include/gstreamer-1.0/gst/gstevent.h:
+/usr/local/include/gstreamer-1.0/gst/gstclock.h:
 
-/usr/include/asio/execution/executor.hpp:
+/usr/local/include/gstreamer-1.0/gst/gstminiobject.h:
 
-/usr/include/gstreamer-1.0/gst/gstformat.h:
+/usr/include/c++/11/cassert:
 
-/usr/include/glib-2.0/gio/gsocketcontrolmessage.h:
+/usr/local/include/gstreamer-1.0/gst/gstallocator.h:
 
-/usr/include/gstreamer-1.0/gst/gstiterator.h:
+/usr/include/c++/11/bits/stl_multimap.h:
 
-/usr/include/glib-2.0/gio/gaction.h:
+/usr/local/include/gstreamer-1.0/gst/gststructure.h:
 
-/usr/include/asio/execution/set_value.hpp:
+/usr/local/include/gstreamer-1.0/gst/gstbytearrayinterface.h:
 
-/usr/include/gstreamer-1.0/gst/gsttaglist.h:
-
-/usr/include/c++/11/bits/alloc_traits.h:
-
-/usr/include/asio/ip/basic_resolver_results.hpp:
-
-/usr/include/gstreamer-1.0/gst/gstsample.h:
-
-/usr/include/gstreamer-1.0/gst/gstsegment.h:
-
-/usr/include/c++/11/bits/sstream.tcc:
-
-/usr/include/gstreamer-1.0/gst/gstquery.h:
-
-/usr/include/gstreamer-1.0/gst/gstcontext.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/c++/11/bits/exception.h:
-
-/usr/include/gstreamer-1.0/gst/gstdevice.h:
-
-/usr/include/glib-2.0/gio/gsettingsschema.h:
-
-/usr/include/gstreamer-1.0/gst/gstbus.h:
-
-/usr/include/gstreamer-1.0/gst/gstelementfactory.h:
-
-/usr/include/gstreamer-1.0/gst/gstpluginfeature.h:
-
-/usr/include/gstreamer-1.0/gst/gstbufferpool.h:
+/usr/include/glib-2.0/gio/gconverterinputstream.h:
 
 /usr/include/asio/detail/conditionally_enabled_event.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstdevicemonitor.h:
+/usr/local/include/gstreamer-1.0/gst/gstpadtemplate.h:
 
-/usr/include/gstreamer-1.0/gst/gstelementmetadata.h:
+/usr/include/glib-2.0/gio/gsettingsschema.h:
 
-/usr/include/asio/detail/reactive_socket_send_op.hpp:
+/usr/local/include/gstreamer-1.0/gst/gstiterator.h:
 
-/usr/include/gstreamer-1.0/gst/gsterror.h:
+/usr/local/include/gstreamer-1.0/gst/gstsample.h:
 
-/usr/include/gstreamer-1.0/gst/gstinfo.h:
+/usr/local/include/gstreamer-1.0/gst/gstsegment.h:
 
-/usr/include/glib-2.0/gio/gactiongroup.h:
+/usr/include/strings.h:
 
-/usr/include/glib-2.0/gio/gtlsserverconnection.h:
+/usr/local/include/gstreamer-1.0/gst/gstquery.h:
 
-/usr/include/gstreamer-1.0/gst/gstparamspecs.h:
+/usr/include/asio/windows/basic_random_access_handle.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstpipeline.h:
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
 
-/usr/include/gstreamer-1.0/gst/gstpoll.h:
+/usr/local/include/gstreamer-1.0/gst/gsttoc.h:
 
-/usr/include/asm-generic/ioctls.h:
+/usr/local/include/gstreamer-1.0/gst/gstcontext.h:
 
-/usr/include/gstreamer-1.0/gst/gstpreset.h:
+/usr/include/glib-2.0/gio/gpollableinputstream.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtspmessage.h:
+/usr/include/glib-2.0/gio/gdbusmessage.h:
 
-/usr/include/asio/posix/stream_descriptor.hpp:
+../headers/datetime.h:
 
-/usr/include/gstreamer-1.0/gst/gstregistry.h:
+/usr/include/glib-2.0/glib/gstring.h:
 
-../datetime.cpp:
+/usr/local/include/gstreamer-1.0/gst/gsttaskpool.h:
 
-/usr/include/gstreamer-1.0/gst/gstpromise.h:
+/usr/local/include/gstreamer-1.0/gst/gstinfo.h:
 
-/usr/include/gstreamer-1.0/gst/gstsystemclock.h:
+/usr/local/include/gstreamer-1.0/gst/gstchildproxy.h:
 
-/usr/include/asio/execution/detail/as_operation.hpp:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
-/usr/include/gstreamer-1.0/gst/gsttracerfactory.h:
+/usr/local/include/gstreamer-1.0/gst/gstdeviceprovider.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-onvif-client.h:
+/usr/include/asio/defer.hpp:
 
-/usr/include/asio/require_concept.hpp:
+/usr/local/include/gstreamer-1.0/gst/gstelementmetadata.h:
 
-/usr/include/gstreamer-1.0/gst/gstutils.h:
+/usr/local/include/gstreamer-1.0/gst/gstghostpad.h:
 
-/usr/include/gstreamer-1.0/gst/gstprotection.h:
+/usr/local/include/gstreamer-1.0/gst/gstparamspecs.h:
 
-/usr/include/gstreamer-1.0/gst/gsttypefind.h:
+/usr/local/include/gstreamer-1.0/gst/gstpipeline.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-object.h:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/asio/posix/descriptor_base.hpp:
+/usr/local/include/gstreamer-1.0/gst/gstpoll.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-pool.h:
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-session.h:
+/usr/local/include/gstreamer-1.0/gst/gstpreset.h:
 
-/usr/include/asio/write_at.hpp:
+/usr/include/glib-2.0/gio/gfilteroutputstream.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtsptransport.h:
+/usr/local/include/gstreamer-1.0/gst/gstregistry.h:
 
-/usr/include/asio/execution/execute.hpp:
+/usr/local/include/gstreamer-1.0/gst/gsttracer.h:
 
-/usr/include/asio/detail/impl/throw_error.ipp:
+/usr/local/include/gstreamer-1.0/gst/gsttypefindfactory.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtspdefs.h:
+/usr/local/include/gstreamer-1.0/gst/gstvecdeque.h:
 
-/usr/include/glib-2.0/gio/gsocket.h:
+/usr/include/asio/detail/timer_queue_set.hpp:
 
-/usr/include/gstreamer-1.0/gst/rtsp/rtsp-prelude.h:
+/usr/include/asio/detail/assert.hpp:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtsp-enumtypes.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server.h:
 
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+/usr/include/asio/execution/blocking.hpp:
 
-/usr/include/gstreamer-1.0/gst/rtsp-server/rtsp-media.h:
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-prelude.h:
 
-/usr/include/gstreamer-1.0/gst/rtsp/gstrtspurl.h:
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-server-object.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp-server/rtsp-session-pool.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/rtsp.h:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtsp.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspurl.h:
+
+/usr/local/include/gstreamer-1.0/gst/rtsp/gstrtspmessage.h:
 
 /usr/include/glib-2.0/gio/gdbusobject.h:
-
-/usr/include/gstreamer-1.0/gst/gstvalue.h:
 
 /usr/include/glib-2.0/gio/giotypes.h:
 
@@ -5922,9 +6133,11 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/gioenums.h:
 
-/usr/include/glib-2.0/gio/gtcpconnection.h:
+/usr/include/glib-2.0/gio/gaction.h:
 
-/usr/include/gstreamer-1.0/gst/gstdatetime.h:
+/usr/include/glib-2.0/gio/gactiongroup.h:
+
+/usr/include/glib-2.0/gio/gtcpconnection.h:
 
 /usr/include/glib-2.0/gio/gactionmap.h:
 
@@ -5932,19 +6145,9 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/gappinfo.h:
 
-/usr/include/gstreamer-1.0/gst/sdp/sdp.h:
-
-/usr/include/gstreamer-1.0/gst/gstobject.h:
-
 /usr/include/glib-2.0/gio/gapplication.h:
 
-/usr/include/x86_64-linux-gnu/bits/timerfd.h:
-
-/usr/include/glib-2.0/gio/gdrive.h:
-
 /usr/include/c++/11/bits/stl_uninitialized.h:
-
-/usr/include/gstreamer-1.0/gst/gsttagsetter.h:
 
 /usr/include/glib-2.0/gio/gapplicationcommandline.h:
 
@@ -5953,10 +6156,6 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 /usr/include/glib-2.0/gio/gasyncinitable.h:
 
 /usr/include/glib-2.0/gio/ginitable.h:
-
-/usr/include/glib-2.0/gio/gfilteroutputstream.h:
-
-/usr/include/glib-2.0/gio/gconverterinputstream.h:
 
 /usr/include/asio/detail/buffer_sequence_adapter.hpp:
 
@@ -5970,36 +6169,16 @@ CMakeFiles/RTSPTranscodingServer.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/glib-2.0/gio/gdbusactiongroup.h:
 
+/usr/local/include/gstreamer-1.0/gst/base/gstpushsrc.h:
+
 /usr/include/glib-2.0/gio/gdbusaddress.h:
 
 /usr/include/asio/impl/io_context.hpp:
+
+/usr/include/c++/11/bits/node_handle.h:
 
 /usr/include/glib-2.0/gio/gdbusconnection.h:
 
 /usr/include/glib-2.0/gio/gdbuserror.h:
 
 /usr/include/glib-2.0/gio/gdbusmethodinvocation.h:
-
-/usr/include/glib-2.0/gio/gdbusnamewatching.h:
-
-/usr/include/glib-2.0/gio/gdbusobjectmanagerserver.h:
-
-/usr/include/glib-2.0/gio/gdbusobjectskeleton.h:
-
-/usr/include/glib-2.0/gio/gdbusproxy.h:
-
-/usr/include/glib-2.0/gio/gdbusutils.h:
-
-/usr/include/glib-2.0/gio/gfileenumerator.h:
-
-/usr/include/glib-2.0/gio/gfileinfo.h:
-
-/usr/include/glib-2.0/gio/gfileinputstream.h:
-
-/usr/include/asio/detail/posix_event.hpp:
-
-/usr/include/glib-2.0/gio/gdbusobjectmanagerclient.h:
-
-/usr/include/glib-2.0/gio/gfileiostream.h:
-
-/usr/include/glib-2.0/gio/giostream.h:
