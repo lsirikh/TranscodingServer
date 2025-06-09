@@ -5,6 +5,28 @@
 #include "datetime.h"
 #include "CustomLogger.h" // CustomLogger 헤더 파일 포함
 
+// ServerConfig 구조체 정의
+struct ServerConfig {
+    std::string name;
+    std::string version;
+    std::string status;
+    std::string ip_address;
+    std::string api_port;
+    std::string rtsp_port;
+
+    // 구조체를 JSON으로 변환하는 함수
+    crow::json::wvalue toJson() const {
+        crow::json::wvalue result;
+        result["name"] = name;
+        result["version"] = version;
+        result["status"] = status;
+        result["ip_address"] = ip_address;
+        result["api_port"] = api_port;
+        result["rtsp_port"] = rtsp_port;
+        return result;
+    }
+};
+
 void unrefGstClient(GstRTSPClient* client);
 
 std::shared_ptr<TranscodingService> service;  // (수정) 자동 정리를 위해 unique_ptr 사용
@@ -13,33 +35,11 @@ std::recursive_mutex  processMutex;  // 클라이언트 목록에 대한 뮤텍�
 
 void startApiServer() {
     crow::SimpleApp app;
+    ServerConfig config = {"Rtsp Server", "v1.0", "Active", "192.168.202.195", "8080", "8555"};
 
-    // // 루트 엔드포인트 정의
-    // CROW_ROUTE(app, "/")([](){
-    //     return "Hello world";
-    // });
-
-    // // JSON 응답을 반환하는 엔드포인트 정의
-    // CROW_ROUTE(app, "/json")([]{
-    //     crow::json::wvalue x({{"message", "Hello, World!"}});
-    //     x["message2"] = "Hello, World.. Again!";
-    //     return x;
-    // });
-
-    // // 경로 파라미터를 사용하는 엔드포인트 정의
-    // CROW_ROUTE(app, "/hello/<string>")([](const std::string& name){
-    //     std::ostringstream os;
-    //     os << "Hello, " << name << "!";
-    //     return crow::response(os.str());
-    // });
-
-    // /status 경로에 대한 GET 요청을 처리하는 엔드포인트 정의
-    CROW_ROUTE(app, "/status").methods(crow::HTTPMethod::Get)([](){
-        crow::json::wvalue result;
-        result["name"] = "Rtsp Server";
-        result["version"] = "v1.0";
-        result["status"] = "Active";
-        return crow::response(result);
+    // /config 경로에 대한 GET 요청을 처리하는 엔드포인트 정의
+    CROW_ROUTE(app, "/get-config").methods(crow::HTTPMethod::Get)([&config](){
+        return crow::response(config.toJson());
     });
 
     // POST 요청을 처리하는 엔드포인트 정의
@@ -156,8 +156,11 @@ void startApiServer() {
         return service->GetMedias();
     });
 
+    // 포트를 uint16_t 타입으로 변환
+    uint16_t port = static_cast<uint16_t>(std::stoi(config.api_port));
+
     // API 서버 시작
-    app.port(8080).multithreaded().run();
+    app.port(port).multithreaded().run();
 }
 
 int main(int argc, char *argv[]) {
