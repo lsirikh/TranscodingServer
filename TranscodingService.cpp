@@ -35,7 +35,7 @@ void TranscodingService::StartServer() {
     GstRTSPSessionPool *pool = gst_rtsp_session_pool_new();
     // 서버에 세션 풀 설정
     gst_rtsp_server_set_session_pool(Server, pool);
-    g_object_set(pool, "max-sessions", 200, NULL);
+    g_object_set(pool, "max-sessions", 0, NULL);
 
     // 세션 풀 클린업을 위한 GSource 설정
     GMainContext *context = g_main_context_default();
@@ -223,16 +223,16 @@ std::unique_ptr<UriParts> TranscodingService::AddRtsp(const std::string& id, con
         }
 
         GstRTSPMediaFactory* firstFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(firstFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! rtph264pay name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(firstFactory, ("( rtspsrc location=" + uri + " latency=0 ! rtph264depay ! rtph264pay name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(firstFactory, TRUE);
         GstRTSPMediaFactory* secondFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(secondFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec  ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=15/1,width=1280,height=960 ! queue ! x264enc bitrate=2000 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(secondFactory, ("( rtspsrc location=" + uri + " latency=0 ! rtph264depay ! h264parse ! nvh264dec  ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=15/1,width=1280,height=960 ! queue ! x264enc bitrate=2000 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(secondFactory, TRUE);
         GstRTSPMediaFactory* thirdFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(thirdFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec  ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=640,height=480 ! queue ! x264enc bitrate=800 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(thirdFactory, ("( rtspsrc location=" + uri + " latency=0 ! rtph264depay ! h264parse ! nvh264dec  ! queue ! videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=640,height=480 ! queue ! x264enc bitrate=800 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(thirdFactory, TRUE);
         GstRTSPMediaFactory* forthFactory = gst_rtsp_media_factory_new();
-        gst_rtsp_media_factory_set_launch(forthFactory, ("( rtspsrc location=" + uri + " latency=500 ! rtph264depay ! h264parse ! nvh264dec  ! queue !  videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=320,height=240 ! queue ! x264enc bitrate=400 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
+        gst_rtsp_media_factory_set_launch(forthFactory, ("( rtspsrc location=" + uri + " latency=0 ! rtph264depay ! h264parse ! nvh264dec  ! queue !  videoscale ! queue ! videorate ! video/x-raw,framerate=10/1,width=320,height=240 ! queue ! x264enc bitrate=400 speed-preset=ultrafast tune=zerolatency ! rtph264pay config-interval=1 name=pay0 pt=96 )").c_str());
         gst_rtsp_media_factory_set_shared(forthFactory, TRUE);
 
         // 현재 시간 가져오기
